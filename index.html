@@ -24,6 +24,7 @@
 
     /* NAV */
     nav {
+       transition: all 0.3s ease;
         position: fixed;
         top: 0;
         width: 100%;
@@ -145,6 +146,12 @@
 <!-- HERO -->
 <div class="hero" id="home">
     <h2>Minimal Studio</h2>
+    <p>We create high-end visual content for real estate, businesses & experiences.</p>
+    <p style="margin-top:10px; font-size:16px;">
+        Φωτογραφία • Video • 360° Virtual Tours
+    </p>
+</div>
+    <h2>Minimal Studio</h2>
     <p>Φωτογραφία • Video • 360° Virtual Tours για ακίνητα & επιχειρήσεις</p>
 </div>
 
@@ -202,6 +209,21 @@
 <footer>
     © 2026 Minimal Studio. All rights reserved.
 </footer>
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.gallery img {
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
 </body>
 </html>
