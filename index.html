@@ -8,12 +8,13 @@
 <style>
 
 /* =========================
-   GLOBAL
+   BASE
 ========================= */
 body{
     margin:0;
     font-family: Arial, sans-serif;
-    background:#000;
+    background:#0b0b0b;
+    color:#fff;
 }
 
 /* =========================
@@ -28,10 +29,8 @@ body{
     justify-content:center;
     text-align:center;
     overflow:hidden;
-    color:#fff;
 }
 
-/* BACKGROUND */
 .hero-bg{
     position:absolute;
     inset:0;
@@ -39,7 +38,6 @@ body{
     transition: transform 0.2s ease-out;
 }
 
-/* SLIDES */
 .slide{
     position:absolute;
     inset:0;
@@ -51,14 +49,12 @@ body{
     transition:opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
 }
 
-/* ACTIVE SLIDE */
 .slide.active{
     opacity:0.35;
     filter:blur(0px);
     animation:kenburns 6s ease-in-out forwards;
 }
 
-/* DARK OVERLAY */
 .hero::before{
     content:"";
     position:absolute;
@@ -67,36 +63,120 @@ body{
     z-index:-1;
 }
 
-/* TEXT */
 .hero h2{
     font-size:64px;
     margin:0;
-    letter-spacing:-2px;
 }
 
 .hero p{
-    color:rgba(255,255,255,0.8);
     max-width:500px;
+    color:rgba(255,255,255,0.8);
 }
 
-/* CTA */
 .cta a{
     display:inline-block;
     margin-top:20px;
+    padding:12px 24px;
     background:#fff;
     color:#111;
-    padding:12px 24px;
     text-decoration:none;
-    border-radius:4px;
     font-weight:bold;
 }
 
 /* =========================
-   ANIMATION
+   SERVICES
 ========================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:80px 40px;
+}
+
+.card{
+    background:#151515;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    padding:40px;
+}
+
+.gallery img{
+    width:100%;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews{
+    padding:60px 40px;
+}
+
+.review{
+    background:#151515;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:10px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-buttons{
+    display:flex;
+    gap:15px;
+    padding:40px;
+}
+
+.btn{
+    padding:10px 20px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+#lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+
+#lightbox img{
+    max-width:80%;
+}
+
+.close,.prev,.next{
+    position:absolute;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.close{top:20px;right:30px;}
+.prev{left:30px;}
+.next{right:30px;}
+
+/* ANIMATION */
 @keyframes kenburns{
-    from{ transform:scale(1.15); }
-    to{ transform:scale(1.05); }
+    from{transform:scale(1.15);}
+    to{transform:scale(1.05);}
 }
 
 </style>
@@ -107,14 +187,12 @@ body{
 <!-- HERO -->
 <div class="hero">
 
-    <!-- BACKGROUND SLIDES -->
     <div class="hero-bg">
         <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1578604281362-8afdc29699a0')"></div>
         <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1667594439073-c63131bb63fa')"></div>
         <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1603192399946-8bbb0703cfc4')"></div>
     </div>
 
-    <!-- CONTENT -->
     <h2>Minimal Studio</h2>
     <p>High-end visual content for real estate, brands & experiences</p>
 
@@ -124,36 +202,87 @@ body{
 
 </div>
 
+<!-- SERVICES -->
+<div class="grid">
+
+    <div class="card">
+        <h4>Real Estate Photography</h4>
+        <p>Premium φωτογράφιση για ακίνητα & Airbnb.</p>
+    </div>
+
+    <div class="card">
+        <h4>Events & Aesthetics</h4>
+        <p>Visual content για επιχειρήσεις & social media.</p>
+    </div>
+
+    <div class="card">
+        <h4>360° Virtual Tours</h4>
+        <p>Street View και walkthrough videos.</p>
+    </div>
+
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1578604281362-8afdc29699a0" onclick="openLightbox(this.src)">
+    <img src="https://images.unsplash.com/photo-1667594439073-c63131bb63fa" onclick="openLightbox(this.src)">
+    <img src="https://images.unsplash.com/photo-1603192399946-8bbb0703cfc4" onclick="openLightbox(this.src)">
+
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews">
+
+    <div class="review">Excellent work. Our listings improved instantly.</div>
+    <div class="review">Very professional and high quality results.</div>
+    <div class="review">Πολύ καλή δουλειά, εξαιρετικές φωτογραφίες.</div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact-buttons" id="contact">
+    <a class="btn" href="mailto:lsminimalstudio@gmail.com">Email</a>
+    <a class="btn" href="https://instagram.com/minimals__">Instagram</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span class="close" onclick="closeLightbox()">✕</span>
+    <span class="prev">❮</span>
+    <span class="next">❯</span>
+    <img id="lightbox-img">
+</div>
+
 <script>
 
-/* =========================
-   SLIDESHOW
-========================= */
+/* SLIDESHOW */
 let index = 0;
 const slides = document.querySelectorAll('.slide');
-
-function showSlide(i){
-    slides.forEach(s => s.classList.remove('active'));
-    slides[i].classList.add('active');
-}
 
 function nextSlide(){
     index++;
     if(index >= slides.length) index = 0;
-    showSlide(index);
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
 }
-
 setInterval(nextSlide, 5000);
 
-/* =========================
-   PARALLAX EFFECT
-========================= */
+/* PARALLAX */
 window.addEventListener("scroll", () => {
     const bg = document.querySelector(".hero-bg");
-    if(bg){
-        bg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-    }
+    bg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
 });
+
+/* LIGHTBOX */
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
 
 </script>
 
