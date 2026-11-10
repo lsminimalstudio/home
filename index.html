@@ -3,23 +3,21 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 
-<meta name="description" content="Minimal Studio — Real Estate Photography, Events, Google Street View, 360° Photography and Virtual Tours.">
+<meta name="description" id="metaDescription"
+content="Minimal Studio — Φωτογράφιση ακινήτων, εκδηλώσεων, φωτογραφίες 360° και εικονικές περιηγήσεις.">
 
 <title>Minimal Studio | Photography & 360° Experiences</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ==========================
-   GLOBAL
-========================== */
+/* ========== GLOBAL ========== */
 
 :root {
   --black: #171717;
@@ -75,7 +73,7 @@ section {
 
 .eyebrow {
   font-size: 11px;
-  letter-spacing: 2.3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #888;
   font-weight: 600;
@@ -136,9 +134,13 @@ section {
   background: #ffffff22;
 }
 
-/* ==========================
-   NAVIGATION
-========================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #888;
+  outline-offset: 4px;
+}
+
+/* ========== NAVIGATION ========== */
 
 .nav {
   position: fixed;
@@ -146,7 +148,7 @@ section {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: #ffffffed;
+  background: rgba(255,255,255,.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -160,23 +162,32 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 18px;
 }
 
 .logo {
   font-size: 19px;
   letter-spacing: -.7px;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 25px;
 }
 
 .nav-links a {
   font-size: 13px;
   color: #555;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -190,6 +201,41 @@ section {
   border-radius: 8px;
 }
 
+/* LANGUAGE SWITCHER */
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 18px;
+  border-left: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: #999;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 5px;
+  transition: color .2s;
+}
+
+.lang-btn:hover {
+  color: #111;
+}
+
+.lang-btn.active {
+  color: #111;
+  font-weight: 700;
+}
+
+.lang-separator {
+  font-size: 12px;
+  color: #ccc;
+}
+
 .menu-toggle {
   display: none;
   border: 0;
@@ -197,9 +243,7 @@ section {
   font-size: 25px;
 }
 
-/* ==========================
-   HERO
-========================== */
+/* ========== HERO ========== */
 
 .hero {
   height: min(810px, 88svh);
@@ -261,7 +305,7 @@ section {
   font-weight: 300;
   max-width: 670px;
   margin: 23px auto 0;
-  color: #ffffffe0;
+  color: rgba(255,255,255,.9);
 }
 
 .hero-actions {
@@ -272,9 +316,7 @@ section {
   margin-top: 34px;
 }
 
-/* ==========================
-   INTRO
-========================== */
+/* ========== INTRO ========== */
 
 .intro {
   text-align: center;
@@ -294,9 +336,7 @@ section {
   margin: 20px auto 0;
 }
 
-/* ==========================
-   SERVICES - TWO CARDS
-========================== */
+/* ========== SERVICES ========== */
 
 .services {
   background: var(--light);
@@ -320,7 +360,7 @@ section {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px #0000000b;
+  box-shadow: 0 15px 35px rgba(0,0,0,.045);
 }
 
 .service-cover {
@@ -371,9 +411,7 @@ section {
   margin-top: auto;
 }
 
-/* ==========================
-   360 EXPERIENCES
-========================== */
+/* ========== 360 EXPERIENCES ========== */
 
 .experiences {
   background: #fff;
@@ -400,8 +438,6 @@ section {
   box-shadow: 0 16px 40px rgba(0,0,0,.07);
 }
 
-/* Enhanced YouTube thumbnail */
-
 .experience-preview {
   display: block;
   position: relative;
@@ -417,11 +453,10 @@ section {
   object-fit: cover;
   object-position: center;
   transform: scale(1.13);
-  transition: transform .65s, filter .4s;
+  transition: transform .65s;
   filter: saturate(1.06) contrast(1.05);
 }
 
-/* Crop screenshot borders */
 .experience-card:hover .experience-preview img {
   transform: scale(1.2);
 }
@@ -450,7 +485,7 @@ section {
   border-radius: 30px;
   padding: 7px 12px;
   font-size: 10px;
-  letter-spacing: 1.3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   background: rgba(0,0,0,.15);
   backdrop-filter: blur(5px);
@@ -475,7 +510,7 @@ section {
 
 .preview-bottom span {
   font-size: 12px;
-  color: #ffffffd9;
+  color: rgba(255,255,255,.85);
 }
 
 .preview-play {
@@ -501,8 +536,6 @@ section {
   transform: translate(-50%, -50%) scale(1.12);
 }
 
-/* Decorative 360 indicators */
-
 .preview-360 {
   position: absolute;
   top: 21px;
@@ -527,7 +560,7 @@ section {
 .experience-label {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   color: #888;
   margin-bottom: 10px;
 }
@@ -548,9 +581,7 @@ section {
   margin-top: auto;
 }
 
-/* ==========================
-   PRICING
-========================== */
+/* ========== PRICING ========== */
 
 .pricing {
   background: var(--light);
@@ -613,7 +644,7 @@ section {
 }
 
 .price.price-custom {
-  font-size: 20px;
+  font-size: 19px;
   letter-spacing: -.5px;
   white-space: normal;
   text-align: right;
@@ -642,6 +673,7 @@ section {
 .price-list li::before {
   content: "✓";
   font-weight: 600;
+  flex: 0 0 auto;
 }
 
 .price-card .btn {
@@ -656,9 +688,7 @@ section {
   max-width: 950px;
 }
 
-/* ==========================
-   PROCESS
-========================== */
+/* ========== PROCESS ========== */
 
 .process-grid {
   display: grid;
@@ -687,9 +717,7 @@ section {
   color: #777;
 }
 
-/* ==========================
-   CONTACT
-========================== */
+/* ========== CONTACT ========== */
 
 .contact {
   background: #171717;
@@ -729,9 +757,7 @@ section {
   margin-top: 24px;
 }
 
-/* ==========================
-   FOOTER
-========================== */
+/* ========== FOOTER ========== */
 
 footer {
   padding: 28px;
@@ -748,14 +774,21 @@ footer {
   margin: auto;
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/* ========== MOBILE ========== */
 
-@media(max-width:800px) {
+@media(max-width: 900px) {
 
   .nav-inner {
     height: 68px;
+  }
+
+  .nav-right {
+    gap: 13px;
+  }
+
+  .language-switch {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .menu-toggle {
@@ -824,6 +857,14 @@ footer {
     padding: 0 18px;
   }
 
+  .nav-inner {
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
   .hero h1 {
     letter-spacing: -2px;
   }
@@ -850,6 +891,11 @@ footer {
     font-size: 22px;
   }
 
+  .preview-label {
+    font-size: 9px;
+    max-width: 70%;
+  }
+
   .price-card {
     padding: 24px;
   }
@@ -862,6 +908,9 @@ footer {
     font-size: 18px;
   }
 
+  .price.price-custom {
+    font-size: 16px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -882,9 +931,7 @@ footer {
 
 <body>
 
-<!-- ==========================
-     NAVIGATION
-========================== -->
+<!-- ========== NAVIGATION ========== -->
 
 <header class="nav">
 
@@ -894,39 +941,74 @@ footer {
     Minimal Studio.
   </a>
 
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    aria-label="Menu"
-    aria-expanded="false"
-    aria-controls="navLinks">
-    ☰
-  </button>
+  <div class="nav-right">
 
-  <div class="nav-links" id="navLinks">
+    <div class="nav-links" id="navLinks">
 
-    <a href="#services">Services</a>
+      <a href="#services" data-i18n="navServices">
+        Υπηρεσίες
+      </a>
 
-    <a href="#experiences">360° Experiences</a>
+      <a href="#experiences" data-i18n="nav360">
+        360° Εμπειρίες
+      </a>
 
-    <a href="#pricing">Pricing</a>
+      <a href="#pricing" data-i18n="navPricing">
+        Τιμοκατάλογος
+      </a>
 
-    <a href="#about">About</a>
+      <a href="#about" data-i18n="navAbout">
+        Σχετικά
+      </a>
 
-    <a href="#contact" class="nav-cta">
-      Get in Touch
-    </a>
+      <a href="#contact" class="nav-cta" data-i18n="navContact">
+        Επικοινωνία
+      </a>
+
+    </div>
+
+    <!-- LANGUAGE SELECTOR -->
+
+    <div class="language-switch" role="group"
+         aria-label="Language / Γλώσσα">
+
+      <button class="lang-btn active"
+              type="button"
+              data-lang="el"
+              aria-pressed="true">
+        ΕΛ
+      </button>
+
+      <span class="lang-separator">/</span>
+
+      <button class="lang-btn"
+              type="button"
+              data-lang="en"
+              aria-pressed="false">
+        EN
+      </button>
+
+    </div>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Άνοιγμα μενού"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      ☰
+    </button>
 
   </div>
 
 </nav>
+
 </header>
 
 <main>
 
-<!-- ==========================
-     HERO
-========================== -->
+<!-- ========== HERO ========== -->
 
 <section class="hero" id="home">
 
@@ -938,26 +1020,30 @@ footer {
 
   <div class="hero-content">
 
-    <div class="hero-label">
-      Photography · Spaces · Visual Stories
+    <div class="hero-label" data-i18n="heroLabel">
+      Φωτογραφία · Χώροι · Οπτικές Ιστορίες
     </div>
 
     <h1>Minimal Studio.</h1>
 
-    <p>
-      Capturing spaces, details and moments
-      through photography and immersive
-      visual experiences.
+    <p data-i18n="heroDescription">
+      Αναδεικνύουμε χώρους, λεπτομέρειες και στιγμές
+      μέσα από τη φωτογραφία και τις καθηλωτικές
+      οπτικές εμπειρίες.
     </p>
 
     <div class="hero-actions">
 
-      <a class="btn btn-light" href="#services">
-        Explore Services
+      <a class="btn btn-light"
+         href="#services"
+         data-i18n="heroExplore">
+        Ανακάλυψε τις υπηρεσίες
       </a>
 
-      <a class="btn btn-outline" href="#contact">
-        Let's Work Together
+      <a class="btn btn-outline"
+         href="#contact"
+         data-i18n="heroContact">
+        Ας συνεργαστούμε
       </a>
 
     </div>
@@ -966,32 +1052,28 @@ footer {
 
 </section>
 
-<!-- ==========================
-     INTRO
-========================== -->
+<!-- ========== INTRO ========== -->
 
 <div class="intro container" id="about">
 
-  <p class="eyebrow">The Studio</p>
+  <p class="eyebrow" data-i18n="introLabel">
+    Το Studio
+  </p>
 
-  <h2>
-    Every space has a story.<br>
-    We make it visible.
+  <h2 data-i18n="introTitle">
+    Κάθε χώρος έχει μια ιστορία.
+    Εμείς την αναδεικνύουμε.
   </h2>
 
-  <p class="subtitle">
-    Real estate photography, visual storytelling
-    and immersive 360° experiences.
-    Thoughtfully created to showcase spaces,
-    businesses and moments at their best.
+  <p class="subtitle" data-i18n="introDescription">
+    Φωτογράφιση ακινήτων, δημιουργικό οπτικό περιεχόμενο
+    και εμπειρίες 360°. Προσεγμένες εικόνες που
+    αναδεικνύουν χώρους, επιχειρήσεις και ξεχωριστές στιγμές.
   </p>
 
 </div>
 
-<!-- ==========================
-     SERVICES
-     ONLY TWO CARDS
-========================== -->
+<!-- ========== SERVICES ========== -->
 
 <section class="services" id="services">
 
@@ -999,13 +1081,17 @@ footer {
 
   <div class="section-header">
 
-    <p class="eyebrow">What We Do</p>
+    <p class="eyebrow" data-i18n="servicesLabel">
+      Τι προσφέρουμε
+    </p>
 
-    <h2 class="heading">Our Services</h2>
+    <h2 class="heading" data-i18n="servicesTitle">
+      Οι Υπηρεσίες μας
+    </h2>
 
-    <p class="subtitle">
-      Photography that captures the unique
-      character of spaces, details and moments.
+    <p class="subtitle" data-i18n="servicesDescription">
+      Φωτογραφία που αποτυπώνει τον ξεχωριστό χαρακτήρα
+      κάθε χώρου, λεπτομέρειας και στιγμής.
     </p>
 
   </div>
@@ -1028,20 +1114,22 @@ footer {
 
       <div class="service-body">
 
-        <div class="service-num">
-          01 / Photography
+        <div class="service-num" data-i18n="realNumber">
+          01 / Φωτογράφιση
         </div>
 
-        <h3>Real Estate Photography</h3>
+        <h3 data-i18n="realTitle">
+          Φωτογράφιση Ακινήτων
+        </h3>
 
-        <p>
-          Professional photography for properties,
-          Airbnb, hotels and architectural spaces.
-          Bringing out the best in every interior.
+        <p data-i18n="realDescription">
+          Επαγγελματική φωτογράφιση ακινήτων, Airbnb,
+          ξενοδοχείων και αρχιτεκτονικών χώρων.
+          Αναδεικνύουμε κάθε εσωτερικό χώρο.
         </p>
 
-        <div class="service-link">
-          Explore Projects →
+        <div class="service-link" data-i18n="exploreProjects">
+          Δες τις φωτογραφίες →
         </div>
 
       </div>
@@ -1057,27 +1145,29 @@ footer {
         <img
           id="eventsCover"
           src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80"
-          alt="Events and Aesthetics Photography"
+          alt="Events & Aesthetics Photography"
           loading="lazy">
 
       </div>
 
       <div class="service-body">
 
-        <div class="service-num">
-          02 / Visual Stories
+        <div class="service-num" data-i18n="eventsNumber">
+          02 / Οπτικές Ιστορίες
         </div>
 
-        <h3>Events & Aesthetics</h3>
+        <h3 data-i18n="eventsTitle">
+          Εκδηλώσεις & Αισθητική
+        </h3>
 
-        <p>
-          Capturing memorable moments,
-          meaningful details and the atmosphere
-          of special occasions.
+        <p data-i18n="eventsDescription">
+          Αποτυπώνουμε μοναδικές στιγμές,
+          ιδιαίτερες λεπτομέρειες και την ατμόσφαιρα
+          σημαντικών εκδηλώσεων.
         </p>
 
-        <div class="service-link">
-          Explore Projects →
+        <div class="service-link" data-i18n="exploreProjects">
+          Δες τις φωτογραφίες →
         </div>
 
       </div>
@@ -1090,10 +1180,7 @@ footer {
 
 </section>
 
-<!-- ==========================
-     DISCOVER SPACES IN 360
-     TWO SIDE BY SIDE CARDS
-========================== -->
+<!-- ========== 360 EXPERIENCES ========== -->
 
 <section class="experiences" id="experiences">
 
@@ -1101,18 +1188,18 @@ footer {
 
   <div class="section-header">
 
-    <p class="eyebrow">
-      Explore Beyond the Frame
+    <p class="eyebrow" data-i18n="tourLabel">
+      Πέρα από τα όρια της εικόνας
     </p>
 
-    <h2 class="heading">
-      Discover Spaces in 360°
+    <h2 class="heading" data-i18n="tourHeading">
+      Ανακάλυψε τους χώρους σε 360°
     </h2>
 
-    <p class="subtitle">
-      From a single panoramic photo to a
-      complete immersive experience.
-      Explore two different ways to showcase a space.
+    <p class="subtitle" data-i18n="tourDescription">
+      Από μία πανοραμική φωτογραφία μέχρι μια ολοκληρωμένη
+      εικονική εμπειρία. Δύο διαφορετικοί τρόποι
+      για να παρουσιάσεις τον χώρο σου.
     </p>
 
   </div>
@@ -1128,33 +1215,29 @@ footer {
         href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Watch Virtual Tour Example">
+        aria-label="Virtual Tour Example">
 
         <img
           src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg"
-          alt="360 Virtual Tours and Walkthroughs by Minimal Studio"
+          alt="360° Virtual Tours by Minimal Studio"
           loading="lazy">
 
-        <span class="preview-label">
-          Immersive Property Experience
+        <span class="preview-label" data-i18n="tourPreviewLabel">
+          Εμπειρία Εικονικής Περιήγησης
         </span>
 
-        <span class="preview-360">
-          360°
-        </span>
+        <span class="preview-360">360°</span>
 
-        <span class="preview-play">
-          ▶
-        </span>
+        <span class="preview-play">▶</span>
 
         <span class="preview-bottom">
 
-          <strong>
-            Step Inside.
+          <strong data-i18n="tourPreviewTitle">
+            Μπες στον χώρο.
           </strong>
 
-          <span>
-            Explore every corner of a space
+          <span data-i18n="tourPreviewSubtitle">
+            Ανακάλυψε κάθε γωνιά
           </span>
 
         </span>
@@ -1163,30 +1246,28 @@ footer {
 
       <div class="experience-body">
 
-        <div class="experience-label">
-          01 / Immersive Experiences
+        <div class="experience-label" data-i18n="tourType">
+          01 / Εικονικές Εμπειρίες
         </div>
 
-        <h3>
+        <h3 data-i18n="virtualTitle">
           Virtual Tours & Walkthroughs
         </h3>
 
-        <p>
-          Experience a property beyond traditional
-          photography. Explore immersive 360°
-          environments and video walkthroughs
-          designed for real estate, hospitality
-          and business presentations.
+        <p data-i18n="virtualDescription">
+          Παρουσίασε έναν χώρο πέρα από την παραδοσιακή
+          φωτογραφία, μέσα από εικονικές περιηγήσεις
+          και βίντεο walkthrough.
+          Ιδανικό για ακίνητα, ξενοδοχεία και επιχειρήσεις.
         </p>
 
         <a
           class="btn"
           href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
           target="_blank"
-          rel="noopener noreferrer">
-
-          Watch Walkthrough →
-
+          rel="noopener noreferrer"
+          data-i18n="watchWalkthrough">
+          Δες την περιήγηση →
         </a>
 
       </div>
@@ -1202,33 +1283,29 @@ footer {
         href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Watch Google Street View Example">
+        aria-label="Street View Example">
 
         <img
           src="https://img.youtube.com/vi/Ro7iMbsFraQ/hqdefault.jpg"
-          alt="Google Street View and 360 Photography Example"
+          alt="Street View 360° Photography by Minimal Studio"
           loading="lazy">
 
-        <span class="preview-label">
-          Google Maps & Panoramas
+        <span class="preview-label" data-i18n="streetPreviewLabel">
+          Google Maps & Πανοράματα
         </span>
 
-        <span class="preview-360">
-          360°
-        </span>
+        <span class="preview-360">360°</span>
 
-        <span class="preview-play">
-          ▶
-        </span>
+        <span class="preview-play">▶</span>
 
         <span class="preview-bottom">
 
-          <strong>
-            Look Around.
+          <strong data-i18n="streetPreviewTitle">
+            Κοίτα γύρω σου.
           </strong>
 
-          <span>
-            One photo. Every direction.
+          <span data-i18n="streetPreviewSubtitle">
+            Μία φωτογραφία. Κάθε κατεύθυνση.
           </span>
 
         </span>
@@ -1237,32 +1314,29 @@ footer {
 
       <div class="experience-body">
 
-        <div class="experience-label">
-          02 / Panoramic Photography
+        <div class="experience-label" data-i18n="streetType">
+          02 / Πανοραμική Φωτογράφιση
         </div>
 
-        <h3>
+        <h3 data-i18n="streetTitle">
           Street View & 360° Photos
         </h3>
 
-        <p>
-          Showcase your business or property with
-          one or more panoramic 360° photographs.
-
-          An ideal solution for shops,
-          restaurants, hotels, Airbnb
-          and Google Maps — without
-          requiring a complete virtual tour.
+        <p data-i18n="streetDescription">
+          Ανάδειξε την επιχείρηση ή το ακίνητό σου
+          με μία ή περισσότερες πανοραμικές φωτογραφίες 360°.
+          Ιδανικό για καταστήματα, εστιατόρια,
+          ξενοδοχεία και Google Maps,
+          χωρίς να απαιτείται ολοκληρωμένο virtual tour.
         </p>
 
         <a
           class="btn"
           href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
           target="_blank"
-          rel="noopener noreferrer">
-
-          Watch Street View Example →
-
+          rel="noopener noreferrer"
+          data-i18n="watchStreet">
+          Δες το Street View →
         </a>
 
       </div>
@@ -1275,9 +1349,7 @@ footer {
 
 </section>
 
-<!-- ==========================
-     PRICING
-========================== -->
+<!-- ========== PRICING ========== -->
 
 <section class="pricing" id="pricing">
 
@@ -1285,77 +1357,75 @@ footer {
 
   <div class="section-header">
 
-    <p class="eyebrow">
-      Simple & Transparent
+    <p class="eyebrow" data-i18n="pricingLabel">
+      Απλές & Ξεκάθαρες Τιμές
     </p>
 
-    <h2 class="heading">
-      Our Pricing
+    <h2 class="heading" data-i18n="pricingHeading">
+      Τιμοκατάλογος
     </h2>
 
-    <p class="subtitle">
-      Flexible photography and 360° packages
-      tailored to your space.
-
-      Every project is different —
-      these are our starting prices.
+    <p class="subtitle" data-i18n="pricingDescription">
+      Ευέλικτα πακέτα φωτογράφισης και 360°,
+      προσαρμοσμένα στις ανάγκες του χώρου σου.
+      Οι παρακάτω είναι τιμές εκκίνησης.
     </p>
 
   </div>
 
   <div class="pricing-grid">
 
-    <!-- PROPERTY PHOTOGRAPHY -->
+    <!-- REAL ESTATE -->
 
     <article class="price-card">
 
-      <div class="price-label">
-        01 / Real Estate
+      <div class="price-label" data-i18n="priceRealLabel">
+        01 / Ακίνητα
       </div>
 
       <div class="price-top">
 
-        <h3>Property Photography</h3>
+        <h3 data-i18n="priceRealTitle">
+          Φωτογράφιση Ακινήτων
+        </h3>
 
         <div class="price">
-          <small>From</small>
+          <small data-i18n="from">Από</small>
           90€
         </div>
 
       </div>
 
-      <p class="desc">
-        Ideal for Airbnb, property listings,
-        apartments and professional spaces.
+      <p class="desc" data-i18n="priceRealDesc">
+        Για Airbnb, αγγελίες ακινήτων,
+        διαμερίσματα και επαγγελματικούς χώρους.
       </p>
 
       <ul class="price-list">
 
-        <li>
-          Up to 10 edited photographs
+        <li data-i18n="realFeature1">
+          Έως 10 επεξεργασμένες φωτογραφίες
         </li>
 
-        <li>
-          Professional color and exposure correction
+        <li data-i18n="realFeature2">
+          Διόρθωση χρωμάτων και φωτισμού
         </li>
 
-        <li>
-          Web-ready high-quality files
+        <li data-i18n="realFeature3">
+          Αρχεία υψηλής ποιότητας για ιστοσελίδες
         </li>
 
-        <li>
-          Online delivery
+        <li data-i18n="onlineDelivery">
+          Ηλεκτρονική παράδοση
         </li>
 
       </ul>
 
-      <a
-        class="btn quote"
-        data-service="Property Photography"
-        href="#contact">
-
-        Request a Quote →
-
+      <a class="btn quote"
+         href="mailto:lsminimalstudio@gmail.com"
+         data-service="real"
+         data-i18n="requestQuote">
+        Ζήτησε προσφορά →
       </a>
 
     </article>
@@ -1364,53 +1434,57 @@ footer {
 
     <article class="price-card">
 
-      <div class="price-label">
-        02 / Events & Aesthetics
+      <div class="price-label" data-i18n="priceEventLabel">
+        02 / Εκδηλώσεις
       </div>
 
       <div class="price-top">
 
-        <h3>Event Photography</h3>
+        <h3 data-i18n="priceEventTitle">
+          Φωτογράφιση Εκδηλώσεων
+        </h3>
 
         <div class="price price-custom">
-          <small>Pricing</small>
-          On Request
+          <small data-i18n="priceLabel">
+            Κόστος
+          </small>
+          <span data-i18n="onRequest">
+            Κατόπιν προσφοράς
+          </span>
         </div>
 
       </div>
 
-      <p class="desc">
-        Photography for events, celebrations
-        and meaningful moments.
+      <p class="desc" data-i18n="priceEventDesc">
+        Φωτογραφική κάλυψη εκδηλώσεων,
+        εορτασμών και ξεχωριστών στιγμών.
       </p>
 
       <ul class="price-list">
 
-        <li>
-          Event details and atmosphere
+        <li data-i18n="eventFeature1">
+          Λεπτομέρειες και ατμόσφαιρα εκδήλωσης
         </li>
 
-        <li>
-          Natural moments and visual storytelling
+        <li data-i18n="eventFeature2">
+          Φυσικές στιγμές και οπτική αφήγηση
         </li>
 
-        <li>
-          Professionally edited photographs
+        <li data-i18n="eventFeature3">
+          Επαγγελματικά επεξεργασμένες φωτογραφίες
         </li>
 
-        <li>
-          Tailored coverage and online delivery
+        <li data-i18n="eventFeature4">
+          Κάλυψη προσαρμοσμένη στις ανάγκες σας
         </li>
 
       </ul>
 
-      <a
-        class="btn quote"
-        data-service="Event Photography"
-        href="#contact">
-
-        Request a Quote →
-
+      <a class="btn quote"
+         href="mailto:lsminimalstudio@gmail.com"
+         data-service="events"
+         data-i18n="requestQuote">
+        Ζήτησε προσφορά →
       </a>
 
     </article>
@@ -1419,146 +1493,136 @@ footer {
 
     <article class="price-card featured">
 
-      <div class="price-label">
-        03 / Google Maps & Panoramas
+      <div class="price-label" data-i18n="priceStreetLabel">
+        03 / Google Maps & Πανοράματα
       </div>
 
       <div class="price-top">
 
-        <h3>
+        <h3 data-i18n="priceStreetTitle">
           Street View & 360° Photos
         </h3>
 
         <div class="price">
-          <small>From</small>
+          <small data-i18n="from">Από</small>
           35€
         </div>
 
       </div>
 
-      <p class="desc">
-        Standalone 360° panoramic photography
-        without a complete walkthrough.
+      <p class="desc" data-i18n="priceStreetDesc">
+        Μεμονωμένες πανοραμικές φωτογραφίες 360°,
+        χωρίς ολοκληρωμένη εικονική περιήγηση.
       </p>
 
       <ul class="price-list">
 
-        <li>
-          1 panoramic 360° photo from 35€
+        <li data-i18n="streetFeature1">
+          1 φωτογραφία 360° από 35€
         </li>
 
-        <li>
-          3 panoramic 360° photos from 79€
+        <li data-i18n="streetFeature2">
+          3 φωτογραφίες 360° από 79€
         </li>
 
-        <li>
-          Panorama editing and export
+        <li data-i18n="streetFeature3">
+          Επεξεργασία και εξαγωγή πανοραμάτων
         </li>
 
-        <li>
-          Google Maps publication by agreement,
-          subject to platform support and approval
+        <li data-i18n="streetFeature4">
+          Δημοσίευση στο Google Maps κατόπιν συμφωνίας,
+          όπου υποστηρίζεται και εγκρίνεται
         </li>
 
       </ul>
 
-      <a
-        class="btn quote"
-        data-service="Street View & 360 Photos"
-        href="#contact">
-
-        Request a Quote →
-
+      <a class="btn quote"
+         href="mailto:lsminimalstudio@gmail.com"
+         data-service="street"
+         data-i18n="requestQuote">
+        Ζήτησε προσφορά →
       </a>
 
     </article>
 
-    <!-- VIRTUAL TOURS -->
+    <!-- VIRTUAL TOUR -->
 
     <article class="price-card featured">
 
-      <div class="price-label">
-        04 / Immersive Experiences
+      <div class="price-label" data-i18n="priceTourLabel">
+        04 / Εικονικές Περιηγήσεις
       </div>
 
       <div class="price-top">
 
-        <h3>
-          Interactive Virtual Tour
+        <h3 data-i18n="priceTourTitle">
+          Διαδραστική Περιήγηση 360°
         </h3>
 
         <div class="price">
-          <small>From</small>
+          <small data-i18n="from">Από</small>
           150€
         </div>
 
       </div>
 
-      <p class="desc">
-        An interactive multi-point 360° experience
-        for properties, websites and businesses.
+      <p class="desc" data-i18n="priceTourDesc">
+        Διαδραστική περιήγηση πολλαπλών σημείων
+        για ακίνητα, ιστοσελίδες και επιχειρήσεις.
       </p>
 
       <ul class="price-list">
 
-        <li>
-          Up to 5 panoramic 360° positions
+        <li data-i18n="tourFeature1">
+          Έως 5 πανοραμικά σημεία 360°
         </li>
 
-        <li>
-          Interactive navigation between spaces
+        <li data-i18n="tourFeature2">
+          Διαδραστική πλοήγηση μεταξύ χώρων
         </li>
 
-        <li>
-          Website embedding code or shareable link
-        </li>
-
-        <li>
-          Hosting and subscriptions quoted separately
+        <li data-i18n="tourFeature3">
+          Σύνδεσμος για το site
         </li>
 
       </ul>
 
-      <a
-        class="btn quote"
-        data-service="Interactive Virtual Tour"
-        href="#contact">
-
-        Request a Quote →
-
+      <a class="btn quote"
+         href="mailto:lsminimalstudio@gmail.com"
+         data-service="tour"
+         data-i18n="requestQuote">
+        Ζήτησε προσφορά →
       </a>
 
     </article>
 
   </div>
 
-  <p class="price-footnote">
-    Indicative starting prices for small, local projects.
-    Final pricing depends on the size of the space,
-    travel, editing and requested deliverables.
-    Hosting, applicable VAT and additional services
-    are quoted separately.
-    Walkthrough video production is priced individually.
+  <p class="price-footnote" data-i18n="pricingNote">
+    Ενδεικτικές τιμές εκκίνησης για μικρά έργα.
+    Το τελικό κόστος εξαρτάται από το μέγεθος του χώρου,
+    τη μετακίνηση, την επεξεργασία και τα παραδοτέα.
+    Φιλοξενία, τυχόν ΦΠΑ και πρόσθετες υπηρεσίες
+    χρεώνονται ξεχωριστά.
+    Τα βίντεο walkthrough κοστολογούνται κατόπιν προσφοράς.
   </p>
 
 </div>
 
 </section>
 
-<!-- ==========================
-     OUR APPROACH
-========================== -->
+<!-- ========== PROCESS ========== -->
 
 <section id="process">
 
 <div class="container">
 
-  <p class="eyebrow">
-    Our Approach
+  <p class="eyebrow" data-i18n="processLabel">
+    Η Διαδικασία μας
   </p>
 
-  <h2 class="heading">
-    Simple. Thoughtful. Effective.
+  <h2 class="heading" data-i18n="processHeading">
+    Απλά. Προσεγμένα. Αποτελεσματικά.
   </h2>
 
   <div class="process-grid">
@@ -1567,11 +1631,13 @@ footer {
 
       <p class="step-number">01</p>
 
-      <h3>Let's Talk</h3>
+      <h3 data-i18n="step1Title">
+        Επικοινωνούμε
+      </h3>
 
-      <p>
-        Tell us about your space, property
-        or business and what you need to showcase.
+      <p data-i18n="step1Desc">
+        Μας περιγράφεις τον χώρο, το ακίνητο
+        ή την επιχείρησή σου και τις ανάγκες σου.
       </p>
 
     </div>
@@ -1580,11 +1646,13 @@ footer {
 
       <p class="step-number">02</p>
 
-      <h3>We Create</h3>
+      <h3 data-i18n="step2Title">
+        Δημιουργούμε
+      </h3>
 
-      <p>
-        Photography and visual experiences
-        carefully tailored to your project.
+      <p data-i18n="step2Desc">
+        Φωτογραφίες και οπτικές εμπειρίες
+        προσαρμοσμένες στο έργο σου.
       </p>
 
     </div>
@@ -1593,12 +1661,14 @@ footer {
 
       <p class="step-number">03</p>
 
-      <h3>You Showcase</h3>
+      <h3 data-i18n="step3Title">
+        Παρουσιάζεις
+      </h3>
 
-      <p>
-        Receive your finished material,
-        ready for your website,
-        property listings or digital channels.
+      <p data-i18n="step3Desc">
+        Παραλαμβάνεις έτοιμο υλικό
+        για ιστοσελίδες, αγγελίες
+        και ψηφιακά κανάλια.
       </p>
 
     </div>
@@ -1609,27 +1679,25 @@ footer {
 
 </section>
 
-<!-- ==========================
-     CONTACT
-========================== -->
+<!-- ========== CONTACT ========== -->
 
 <section class="contact" id="contact">
 
 <div class="container">
 
-  <p class="eyebrow">
-    Start a Project
+  <p class="eyebrow" data-i18n="contactLabel">
+    Ξεκίνα ένα Project
   </p>
 
-  <h2>
-    Let's Create<br>
-    Something Beautiful.
+  <h2 data-i18n="contactHeading">
+    Ας Δημιουργήσουμε Κάτι Ξεχωριστό.
   </h2>
 
-  <p>
-    Have a property, business or upcoming project?
-    Get in touch and let's discuss how
-    we can bring your vision to life.
+  <p data-i18n="contactDescription">
+    Έχεις ένα ακίνητο, μια επιχείρηση
+    ή κάποιο νέο project;
+    Επικοινώνησε μαζί μας
+    για να συζητήσουμε τις ανάγκες σου.
   </p>
 
   <div class="contact-actions">
@@ -1637,10 +1705,9 @@ footer {
     <a
       class="btn btn-light"
       id="emailButton"
-      href="mailto:lsminimalstudio@gmail.com?subject=Project%20Inquiry">
-
-      Request a Quote →
-
+      href="mailto:lsminimalstudio@gmail.com"
+      data-i18n="requestQuote">
+      Ζήτησε προσφορά →
     </a>
 
     <a
@@ -1648,19 +1715,14 @@ footer {
       href="https://instagram.com/minimals__"
       target="_blank"
       rel="noopener noreferrer">
-
       Instagram
-
     </a>
 
   </div>
 
-  <a
-    class="contact-email"
-    href="mailto:lsminimalstudio@gmail.com">
-
+  <a class="contact-email"
+     href="mailto:lsminimalstudio@gmail.com">
     lsminimalstudio@gmail.com
-
   </a>
 
 </div>
@@ -1669,9 +1731,7 @@ footer {
 
 </main>
 
-<!-- ==========================
-     FOOTER
-========================== -->
+<!-- ========== FOOTER ========== -->
 
 <footer>
 
@@ -1681,8 +1741,8 @@ footer {
     © <span id="year"></span> Minimal Studio.
   </span>
 
-  <span>
-    Photography · Spaces · 360° Experiences
+  <span data-i18n="footerText">
+    Φωτογραφία · Χώροι · Εμπειρίες 360°
   </span>
 
   <a
@@ -1696,40 +1756,677 @@ footer {
 
 </footer>
 
-<!-- ==========================
-     JAVASCRIPT
-========================== -->
-
 <script>
 
-/*
-  PHOTO THUMBNAILS
+/* ==========================================
+   BILINGUAL CONTENT
 
-  Διατηρούμε αρχικά τις δύο εικόνες που ήδη
-  εμφανίζονται στα Real Estate / Events.
+   EL = Ελληνικά
+   EN = English
 
-  Αν βρεθούν φωτογραφίες στις υπάρχουσες
-  HTML συλλογές, χρησιμοποιούμε εκείνες.
+   Όλες οι τιμές σε € παραμένουν ίδιες.
+========================================== */
 
-  Δεν δημιουργούμε νέα galleries.
-*/
+const translations = {
 
-async function useGalleryPhoto(page, imageId, imageIndex = 0) {
+  el: {
+
+    metaDescription:
+      "Minimal Studio — Φωτογράφιση ακινήτων, εκδηλώσεων, φωτογραφίες 360° και εικονικές περιηγήσεις.",
+
+    navServices: "Υπηρεσίες",
+    nav360: "360° Εμπειρίες",
+    navPricing: "Τιμοκατάλογος",
+    navAbout: "Σχετικά",
+    navContact: "Επικοινωνία",
+
+    heroLabel: "Φωτογραφία · Χώροι · Οπτικές Ιστορίες",
+
+    heroDescription:
+      "Αναδεικνύουμε χώρους, λεπτομέρειες και στιγμές μέσα από τη φωτογραφία και τις καθηλωτικές οπτικές εμπειρίες.",
+
+    heroExplore: "Ανακάλυψε τις υπηρεσίες",
+    heroContact: "Ας συνεργαστούμε",
+
+    introLabel: "Το Studio",
+
+    introTitle:
+      "Κάθε χώρος έχει μια ιστορία. Εμείς την αναδεικνύουμε.",
+
+    introDescription:
+      "Φωτογράφιση ακινήτων, δημιουργικό οπτικό περιεχόμενο και εμπειρίες 360°. Προσεγμένες εικόνες που αναδεικνύουν χώρους, επιχειρήσεις και ξεχωριστές στιγμές.",
+
+    servicesLabel: "Τι προσφέρουμε",
+    servicesTitle: "Οι Υπηρεσίες μας",
+
+    servicesDescription:
+      "Φωτογραφία που αποτυπώνει τον ξεχωριστό χαρακτήρα κάθε χώρου, λεπτομέρειας και στιγμής.",
+
+    realNumber: "01 / Φωτογράφιση",
+    realTitle: "Φωτογράφιση Ακινήτων",
+
+    realDescription:
+      "Επαγγελματική φωτογράφιση ακινήτων, Airbnb, ξενοδοχείων και αρχιτεκτονικών χώρων. Αναδεικνύουμε κάθε εσωτερικό χώρο.",
+
+    eventsNumber: "02 / Οπτικές Ιστορίες",
+    eventsTitle: "Εκδηλώσεις & Αισθητική",
+
+    eventsDescription:
+      "Αποτυπώνουμε μοναδικές στιγμές, ιδιαίτερες λεπτομέρειες και την ατμόσφαιρα σημαντικών εκδηλώσεων.",
+
+    exploreProjects: "Δες τις φωτογραφίες →",
+
+    tourLabel: "Πέρα από τα όρια της εικόνας",
+
+    tourHeading: "Ανακάλυψε τους χώρους σε 360°",
+
+    tourDescription:
+      "Από μία πανοραμική φωτογραφία μέχρι μια ολοκληρωμένη εικονική εμπειρία. Δύο διαφορετικοί τρόποι για να παρουσιάσεις τον χώρο σου.",
+
+    tourPreviewLabel: "Εμπειρία Εικονικής Περιήγησης",
+    tourPreviewTitle: "Μπες στον χώρο.",
+    tourPreviewSubtitle: "Ανακάλυψε κάθε γωνιά",
+
+    tourType: "01 / Εικονικές Εμπειρίες",
+    virtualTitle: "Virtual Tours & Walkthroughs",
+
+    virtualDescription:
+      "Παρουσίασε έναν χώρο πέρα από την παραδοσιακή φωτογραφία, μέσα από εικονικές περιηγήσεις και βίντεο walkthrough. Ιδανικό για ακίνητα, ξενοδοχεία και επιχειρήσεις.",
+
+    watchWalkthrough: "Δες την περιήγηση →",
+
+    streetPreviewLabel: "Google Maps & Πανοράματα",
+    streetPreviewTitle: "Κοίτα γύρω σου.",
+    streetPreviewSubtitle: "Μία φωτογραφία. Κάθε κατεύθυνση.",
+
+    streetType: "02 / Πανοραμική Φωτογράφιση",
+    streetTitle: "Street View & 360° Photos",
+
+    streetDescription:
+      "Ανάδειξε την επιχείρηση ή το ακίνητό σου με μία ή περισσότερες πανοραμικές φωτογραφίες 360°. Ιδανικό για καταστήματα, εστιατόρια, ξενοδοχεία και Google Maps, χωρίς να απαιτείται ολοκληρωμένο virtual tour.",
+
+    watchStreet: "Δες το Street View →",
+
+    pricingLabel: "Απλές & Ξεκάθαρες Τιμές",
+    pricingHeading: "Τιμοκατάλογος",
+
+    pricingDescription:
+      "Ευέλικτα πακέτα φωτογράφισης και 360°, προσαρμοσμένα στις ανάγκες του χώρου σου. Οι παρακάτω είναι τιμές εκκίνησης.",
+
+    from: "Από",
+    priceLabel: "Κόστος",
+    onRequest: "Κατόπιν προσφοράς",
+
+    priceRealLabel: "01 / Ακίνητα",
+    priceRealTitle: "Φωτογράφιση Ακινήτων",
+
+    priceRealDesc:
+      "Για Airbnb, αγγελίες ακινήτων, διαμερίσματα και επαγγελματικούς χώρους.",
+
+    realFeature1: "Έως 10 επεξεργασμένες φωτογραφίες",
+    realFeature2: "Διόρθωση χρωμάτων και φωτισμού",
+    realFeature3: "Αρχεία υψηλής ποιότητας για ιστοσελίδες",
+
+    onlineDelivery: "Ηλεκτρονική παράδοση",
+
+    priceEventLabel: "02 / Εκδηλώσεις",
+    priceEventTitle: "Φωτογράφιση Εκδηλώσεων",
+
+    priceEventDesc:
+      "Φωτογραφική κάλυψη εκδηλώσεων, εορτασμών και ξεχωριστών στιγμών.",
+
+    eventFeature1: "Λεπτομέρειες και ατμόσφαιρα εκδήλωσης",
+    eventFeature2: "Φυσικές στιγμές και οπτική αφήγηση",
+    eventFeature3: "Επαγγελματικά επεξεργασμένες φωτογραφίες",
+    eventFeature4: "Κάλυψη προσαρμοσμένη στις ανάγκες σας",
+
+    priceStreetLabel: "03 / Google Maps & Πανοράματα",
+    priceStreetTitle: "Street View & 360° Photos",
+
+    priceStreetDesc:
+      "Μεμονωμένες πανοραμικές φωτογραφίες 360°, χωρίς ολοκληρωμένη εικονική περιήγηση.",
+
+    streetFeature1: "1 φωτογραφία 360° από 35€",
+    streetFeature2: "3 φωτογραφίες 360° από 79€",
+    streetFeature3: "Επεξεργασία και εξαγωγή πανοραμάτων",
+
+    streetFeature4:
+      "Δημοσίευση στο Google Maps κατόπιν συμφωνίας, όπου υποστηρίζεται και εγκρίνεται",
+
+    priceTourLabel: "04 / Εικονικές Περιηγήσεις",
+    priceTourTitle: "Διαδραστική Περιήγηση 360°",
+
+    priceTourDesc:
+      "Διαδραστική περιήγηση πολλαπλών σημείων για ακίνητα, ιστοσελίδες και επιχειρήσεις.",
+
+    tourFeature1: "Έως 5 πανοραμικά σημεία 360°",
+    tourFeature2: "Διαδραστική πλοήγηση μεταξύ χώρων",
+    tourFeature3: "Σύνδεσμος ή κώδικας ενσωμάτωσης στο site",
+    tourFeature4: "Φιλοξενία και συνδρομές με ξεχωριστή χρέωση",
+
+    requestQuote: "Ζήτησε προσφορά →",
+
+    pricingNote:
+      "Ενδεικτικές τιμές εκκίνησης για μικρά έργα. Το τελικό κόστος εξαρτάται από το μέγεθος του χώρου, τη μετακίνηση, την επεξεργασία και τα παραδοτέα. Φιλοξενία, τυχόν ΦΠΑ και πρόσθετες υπηρεσίες χρεώνονται ξεχωριστά. Τα βίντεο walkthrough κοστολογούνται κατόπιν προσφοράς.",
+
+    processLabel: "Η Διαδικασία μας",
+    processHeading: "Απλά. Προσεγμένα. Αποτελεσματικά.",
+
+    step1Title: "Επικοινωνούμε",
+
+    step1Desc:
+      "Μας περιγράφεις τον χώρο, το ακίνητο ή την επιχείρησή σου και τις ανάγκες σου.",
+
+    step2Title: "Δημιουργούμε",
+
+    step2Desc:
+      "Φωτογραφίες και οπτικές εμπειρίες προσαρμοσμένες στο έργο σου.",
+
+    step3Title: "Παρουσιάζεις",
+
+    step3Desc:
+      "Παραλαμβάνεις έτοιμο υλικό για ιστοσελίδες, αγγελίες και ψηφιακά κανάλια.",
+
+    contactLabel: "Ξεκίνα ένα Project",
+
+    contactHeading:
+      "Ας Δημιουργήσουμε Κάτι Ξεχωριστό.",
+
+    contactDescription:
+      "Έχεις ένα ακίνητο, μια επιχείρηση ή κάποιο νέο project; Επικοινώνησε μαζί μας για να συζητήσουμε τις ανάγκες σου.",
+
+    footerText: "Φωτογραφία · Χώροι · Εμπειρίες 360°",
+
+    emailSubject: "Αίτημα προσφοράς",
+    emailBody:
+      "Γεια σας,\n\nΕνδιαφέρομαι για την υπηρεσία: {service}\n\nΘα ήθελα να μάθω περισσότερα σχετικά με τη διαθεσιμότητα και το κόστος.\n\nΕυχαριστώ.",
+
+    menuOpen: "Άνοιγμα μενού",
+    menuClose: "Κλείσιμο μενού",
+
+    services: {
+      real: "Φωτογράφιση Ακινήτων",
+      events: "Φωτογράφιση Εκδηλώσεων",
+      street: "Street View & 360° Photos",
+      tour: "Διαδραστική Περιήγηση 360°"
+    }
+
+  },
+
+  en: {
+
+    metaDescription:
+      "Minimal Studio — Real estate photography, event photography, 360° photography and virtual tours.",
+
+    navServices: "Services",
+    nav360: "360° Experiences",
+    navPricing: "Pricing",
+    navAbout: "About",
+    navContact: "Get in Touch",
+
+    heroLabel: "Photography · Spaces · Visual Stories",
+
+    heroDescription:
+      "Capturing spaces, details and moments through photography and immersive visual experiences.",
+
+    heroExplore: "Explore Services",
+    heroContact: "Let's Work Together",
+
+    introLabel: "The Studio",
+
+    introTitle:
+      "Every space has a story. We make it visible.",
+
+    introDescription:
+      "Real estate photography, visual storytelling and immersive 360° experiences. Thoughtfully created to showcase spaces, businesses and moments at their best.",
+
+    servicesLabel: "What We Do",
+    servicesTitle: "Our Services",
+
+    servicesDescription:
+      "Photography that captures the unique character of spaces, details and moments.",
+
+    realNumber: "01 / Photography",
+    realTitle: "Real Estate Photography",
+
+    realDescription:
+      "Professional photography for properties, Airbnb, hotels and architectural spaces. Bringing out the best in every interior.",
+
+    eventsNumber: "02 / Visual Stories",
+    eventsTitle: "Events & Aesthetics",
+
+    eventsDescription:
+      "Capturing memorable moments, meaningful details and the atmosphere of special occasions.",
+
+    exploreProjects: "Explore Projects →",
+
+    tourLabel: "Explore Beyond the Frame",
+    tourHeading: "Discover Spaces in 360°",
+
+    tourDescription:
+      "From a single panoramic photo to a complete immersive experience. Explore two different ways to showcase a space.",
+
+    tourPreviewLabel: "Immersive Property Experience",
+    tourPreviewTitle: "Step Inside.",
+    tourPreviewSubtitle: "Explore every corner of a space",
+
+    tourType: "01 / Immersive Experiences",
+    virtualTitle: "Virtual Tours & Walkthroughs",
+
+    virtualDescription:
+      "Experience a property beyond traditional photography through immersive 360° tours and video walkthroughs. Ideal for real estate, hospitality and business presentations.",
+
+    watchWalkthrough: "Watch Walkthrough →",
+
+    streetPreviewLabel: "Google Maps & Panoramas",
+    streetPreviewTitle: "Look Around.",
+    streetPreviewSubtitle: "One photo. Every direction.",
+
+    streetType: "02 / Panoramic Photography",
+    streetTitle: "Street View & 360° Photos",
+
+    streetDescription:
+      "Showcase your business or property with one or more panoramic 360° photographs. Ideal for shops, restaurants, hotels and Google Maps — without requiring a complete virtual tour.",
+
+    watchStreet: "Watch Street View Example →",
+
+    pricingLabel: "Simple & Transparent",
+    pricingHeading: "Our Pricing",
+
+    pricingDescription:
+      "Flexible photography and 360° packages tailored to your space. Every project is different — these are our starting prices.",
+
+    from: "From",
+    priceLabel: "Pricing",
+    onRequest: "On Request",
+
+    priceRealLabel: "01 / Real Estate",
+    priceRealTitle: "Property Photography",
+
+    priceRealDesc:
+      "Ideal for Airbnb, property listings, apartments and professional spaces.",
+
+    realFeature1: "Up to 10 edited photographs",
+    realFeature2: "Professional color and exposure correction",
+    realFeature3: "Web-ready high-quality files",
+
+    onlineDelivery: "Online delivery",
+
+    priceEventLabel: "02 / Events & Aesthetics",
+    priceEventTitle: "Event Photography",
+
+    priceEventDesc:
+      "Photography for events, celebrations and meaningful moments.",
+
+    eventFeature1: "Event details and atmosphere",
+    eventFeature2: "Natural moments and visual storytelling",
+    eventFeature3: "Professionally edited photographs",
+    eventFeature4: "Tailored coverage and online delivery",
+
+    priceStreetLabel: "03 / Google Maps & Panoramas",
+    priceStreetTitle: "Street View & 360° Photos",
+
+    priceStreetDesc:
+      "Standalone 360° panoramic photography without a complete virtual walkthrough.",
+
+    streetFeature1: "1 panoramic 360° photo from 35€",
+    streetFeature2: "3 panoramic 360° photos from 79€",
+    streetFeature3: "Panorama editing and export",
+
+    streetFeature4:
+      "Google Maps publication by agreement, subject to platform support and approval",
+
+    priceTourLabel: "04 / Immersive Experiences",
+    priceTourTitle: "Interactive Virtual Tour",
+
+    priceTourDesc:
+      "An interactive multi-point 360° experience for properties, websites and businesses.",
+
+    tourFeature1: "Up to 5 panoramic 360° positions",
+    tourFeature2: "Interactive navigation between spaces",
+    tourFeature3: "Website embedding code or shareable link",
+
+    requestQuote: "Request a Quote →",
+
+    pricingNote:
+      "Indicative starting prices for small, local projects. Final pricing depends on the size of the space, travel, editing and requested deliverables. Hosting, applicable VAT and additional services are quoted separately. Walkthrough video production is priced individually.",
+
+    processLabel: "Our Approach",
+    processHeading: "Simple. Thoughtful. Effective.",
+
+    step1Title: "Let's Talk",
+
+    step1Desc:
+      "Tell us about your space, property or business and what you need to showcase.",
+
+    step2Title: "We Create",
+
+    step2Desc:
+      "Photography and visual experiences carefully tailored to your project.",
+
+    step3Title: "You Showcase",
+
+    step3Desc:
+      "Receive your finished material, ready for your website, property listings or digital channels.",
+
+    contactLabel: "Start a Project",
+
+    contactHeading:
+      "Let's Create Something Beautiful.",
+
+    contactDescription:
+      "Have a property, business or upcoming project? Get in touch and let's discuss how we can bring your vision to life.",
+
+    footerText: "Photography · Spaces · 360° Experiences",
+
+    emailSubject: "Quote Request",
+    emailBody:
+      "Hello,\n\nI'm interested in the following service: {service}\n\nI'd like to know more about availability and pricing.\n\nThank you.",
+
+    menuOpen: "Open menu",
+    menuClose: "Close menu",
+
+    services: {
+      real: "Property Photography",
+      events: "Event Photography",
+      street: "Street View & 360° Photos",
+      tour: "Interactive Virtual Tour"
+    }
+
+  }
+
+};
+
+
+/* ==========================================
+   LANGUAGE SWITCHING
+========================================== */
+
+function getPreferredLanguage() {
+
+  let savedLanguage = null;
+
+  try {
+    savedLanguage = localStorage.getItem(
+      "minimalStudioLanguage"
+    );
+  } catch (error) {
+    // Storage may be unavailable.
+  }
+
+  if (
+    savedLanguage === "el" ||
+    savedLanguage === "en"
+  ) {
+    return savedLanguage;
+  }
+
+  const browserLanguage =
+    navigator.language || "en";
+
+  return browserLanguage.toLowerCase()
+    .startsWith("el") ? "el" : "en";
+}
+
+let currentLanguage = getPreferredLanguage();
+
+
+function setLanguage(lang) {
+
+  if (!translations[lang]) return;
+
+  currentLanguage = lang;
+
+  const t = translations[lang];
+
+  /* Update HTML language */
+
+  document.documentElement.lang = lang;
+
+  /* Update all translated elements */
+
+  document.querySelectorAll(
+    "[data-i18n]"
+  ).forEach(element => {
+
+    const key = element.dataset.i18n;
+
+    if (typeof t[key] === "string") {
+      element.textContent = t[key];
+    }
+
+  });
+
+  /* Update browser tab and description */
+
+  document.title = lang === "el"
+    ? "Minimal Studio | Φωτογραφία & Εμπειρίες 360°"
+    : "Minimal Studio | Photography & 360° Experiences";
+
+  document.getElementById(
+    "metaDescription"
+  ).setAttribute(
+    "content",
+    t.metaDescription
+  );
+
+  /* Update active language button */
+
+  document.querySelectorAll(
+    ".lang-btn"
+  ).forEach(button => {
+
+    const active =
+      button.dataset.lang === lang;
+
+    button.classList.toggle(
+      "active",
+      active
+    );
+
+    button.setAttribute(
+      "aria-pressed",
+      String(active)
+    );
+
+  });
+
+  /* Update menu accessibility */
+
+  updateMenuLabel();
+
+  /* Update email links */
+
+  updateEmailLinks();
+
+  /* Save preferred language */
 
   try {
 
-    const url = new URL(page, location.href);
+    localStorage.setItem(
+      "minimalStudioLanguage",
+      lang
+    );
 
-    const response = await fetch(url.href);
+  } catch (error) {
+    // Page works without localStorage.
+  }
+
+}
+
+
+/* LANGUAGE BUTTONS */
+
+document.querySelectorAll(
+  ".lang-btn"
+).forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    setLanguage(
+      button.dataset.lang
+    );
+
+  });
+
+});
+
+
+/* ==========================================
+   EMAIL QUOTE LINKS
+
+   Each pricing card opens an email
+   with the selected service and language.
+========================================== */
+
+function createEmailLink(serviceKey = null) {
+
+  const t = translations[currentLanguage];
+
+  const serviceName = serviceKey
+    ? t.services[serviceKey]
+    : null;
+
+  const subject = serviceName
+    ? t.emailSubject + " - " + serviceName
+    : t.emailSubject + " - Minimal Studio";
+
+  let body = "";
+
+  if (serviceName) {
+
+    body = t.emailBody.replace(
+      "{service}",
+      serviceName
+    );
+
+  }
+
+  return "mailto:lsminimalstudio@gmail.com" +
+    "?subject=" + encodeURIComponent(subject) +
+    (body
+      ? "&body=" + encodeURIComponent(body)
+      : "");
+
+}
+
+
+function updateEmailLinks() {
+
+  document.querySelectorAll(
+    ".quote"
+  ).forEach(link => {
+
+    const serviceKey = link.dataset.service;
+
+    link.href = createEmailLink(serviceKey);
+
+  });
+
+  document.getElementById(
+    "emailButton"
+  ).href = createEmailLink();
+
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+const menu = document.getElementById(
+  "menuToggle"
+);
+
+const nav = document.getElementById(
+  "navLinks"
+);
+
+
+function updateMenuLabel() {
+
+  const t = translations[currentLanguage];
+
+  const isOpen = nav.classList.contains(
+    "open"
+  );
+
+  menu.setAttribute(
+    "aria-label",
+    isOpen ? t.menuClose : t.menuOpen
+  );
+
+}
+
+
+menu.addEventListener("click", () => {
+
+  const opened = nav.classList.toggle(
+    "open"
+  );
+
+  menu.setAttribute(
+    "aria-expanded",
+    String(opened)
+  );
+
+  updateMenuLabel();
+
+});
+
+
+nav.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    nav.classList.remove("open");
+
+    menu.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    updateMenuLabel();
+
+  });
+
+});
+
+
+/* ==========================================
+   EXISTING REAL PHOTOS
+
+   Keeps the two existing service images
+   and attempts to retrieve photos from
+   real-estate/ and events/.
+
+   If loading fails, existing thumbnails
+   remain visible.
+========================================== */
+
+async function useGalleryPhoto(
+  page,
+  imageId,
+  imageIndex = 0
+) {
+
+  try {
+
+    const url = new URL(
+      page,
+      location.href
+    );
+
+    const response = await fetch(
+      url.href
+    );
 
     if (!response.ok) return;
 
     const html = await response.text();
 
-    const doc = new DOMParser().parseFromString(
-      html,
-      "text/html"
-    );
+    const doc = new DOMParser()
+      .parseFromString(html, "text/html");
 
     let imgs = [
       ...doc.querySelectorAll(
@@ -1756,18 +2453,19 @@ async function useGalleryPhoto(page, imageId, imageIndex = 0) {
 
     if (!sources.length) return;
 
-    const selected = sources[imageIndex] || sources[0];
+    const selected =
+      sources[imageIndex] || sources[0];
 
-    const finalURL = new URL(selected, url.href).href;
+    const finalURL = new URL(
+      selected,
+      url.href
+    ).href;
 
-    const target = document.getElementById(imageId);
+    const target = document.getElementById(
+      imageId
+    );
 
     if (!target) return;
-
-    /*
-      Κρατάμε την υπάρχουσα φωτογραφία
-      αν η νέα δεν μπορεί να φορτωθεί.
-    */
 
     const testImage = new Image();
 
@@ -1780,7 +2478,7 @@ async function useGalleryPhoto(page, imageId, imageIndex = 0) {
   } catch (error) {
 
     console.warn(
-      "Could not load photo from:",
+      "Could not load gallery photo:",
       page,
       error
     );
@@ -1789,7 +2487,17 @@ async function useGalleryPhoto(page, imageId, imageIndex = 0) {
 
 }
 
-/* Load existing gallery photos */
+
+/* ==========================================
+   INITIALIZE WEBSITE
+========================================== */
+
+/* Apply initial language */
+
+setLanguage(currentLanguage);
+
+
+/* Load photos from existing pages */
 
 if (
   location.protocol === "https:" ||
@@ -1810,86 +2518,12 @@ if (
 
 }
 
-/* ==========================
-   MOBILE MENU
-========================== */
 
-const menu = document.getElementById("menuToggle");
+/* Automatic footer year */
 
-const nav = document.getElementById("navLinks");
-
-menu.addEventListener("click", () => {
-
-  const opened = nav.classList.toggle("open");
-
-  menu.setAttribute(
-    "aria-expanded",
-    String(opened)
-  );
-
-});
-
-nav.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    nav.classList.remove("open");
-
-    menu.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-  });
-
-});
-
-/* ==========================
-   SERVICE QUOTE EMAIL
-========================== */
-
-const emailButton = document.getElementById("emailButton");
-
-const defaultEmailHref = emailButton.href;
-
-document.querySelectorAll(".quote").forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    const service =
-      link.dataset.service || "Photography";
-
-    emailButton.href =
-      "mailto:lsminimalstudio@gmail.com?subject=" +
-      encodeURIComponent(
-        "Quote Request - " + service
-      );
-
-  });
-
-});
-
-/*
-  Reset the contact button when visitors use
-  the normal contact navigation.
-*/
-
-document.querySelectorAll(
-  '.nav-cta, a[href="#contact"]:not(.quote)'
-).forEach(link => {
-
-  link.addEventListener("click", () => {
-    emailButton.href = defaultEmailHref;
-  });
-
-});
-
-/* ==========================
-   FOOTER YEAR
-========================== */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById(
+  "year"
+).textContent = new Date().getFullYear();
 
 </script>
 
