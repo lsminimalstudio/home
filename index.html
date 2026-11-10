@@ -6,18 +6,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 
+<title>Minimal Studio | Photography & 360° Experiences</title>
+
 <meta name="description" id="metaDescription"
 content="Minimal Studio — Φωτογράφιση ακινήτων, εκδηλώσεων, φωτογραφίες 360° και εικονικές περιηγήσεις.">
 
-<title>Minimal Studio | Photography & 360° Experiences</title>
+<!-- SOCIAL MEDIA PREVIEW -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Minimal Studio">
+<meta property="og:title" content="Minimal Studio">
+<meta property="og:description" content="Photography · Real Estate · 360° Experiences">
+<meta property="og:url" content="https://lsminimalstudio.github.io/home/">
+<meta property="og:image" content="https://lsminimalstudio.github.io/home/og-image.png">
+<meta property="og:image:secure_url" content="https://lsminimalstudio.github.io/home/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1731">
+<meta property="og:image:height" content="909">
+<meta property="og:image:alt" content="Minimal Studio — Photography & 360° Experiences">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Minimal Studio">
+<meta name="twitter:description" content="Photography · Real Estate · 360° Experiences">
+<meta name="twitter:image" content="https://lsminimalstudio.github.io/home/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ========== GLOBAL ========== */
+/* ==============================
+   GLOBAL
+============================== */
 
 :root {
   --black: #171717;
@@ -140,7 +160,9 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* ========== NAVIGATION ========== */
+/* ==============================
+   NAVIGATION
+============================== */
 
 .nav {
   position: fixed;
@@ -243,7 +265,9 @@ button:focus-visible {
   font-size: 25px;
 }
 
-/* ========== HERO ========== */
+/* ==============================
+   HERO
+============================== */
 
 .hero {
   height: min(810px, 88svh);
@@ -316,27 +340,56 @@ button:focus-visible {
   margin-top: 34px;
 }
 
-/* ========== INTRO ========== */
+/* ==============================
+   INTRO - CENTERED TWO LINES
+============================== */
 
 .intro {
   text-align: center;
-  padding: 90px 25px;
+  padding: 100px 25px;
 }
 
-.intro h2 {
-  font-size: clamp(27px, 3.4vw, 42px);
-  max-width: 800px;
-  margin: auto;
+.intro .eyebrow {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/*
+  Κάθε πρόταση εμφανίζεται σε
+  ξεχωριστή, κεντραρισμένη γραμμή.
+*/
+
+.intro-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(26px, 3.3vw, 43px);
   font-weight: 500;
-  letter-spacing: -1.4px;
+  letter-spacing: -1.5px;
   line-height: 1.35;
 }
 
-.intro .subtitle {
-  margin: 20px auto 0;
+.intro-title span {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
-/* ========== SERVICES ========== */
+.intro .subtitle {
+  margin: 26px auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+/* ==============================
+   SERVICES
+============================== */
 
 .services {
   background: var(--light);
@@ -411,7 +464,9 @@ button:focus-visible {
   margin-top: auto;
 }
 
-/* ========== 360 EXPERIENCES ========== */
+/* ==============================
+   360 EXPERIENCES
+============================== */
 
 .experiences {
   background: #fff;
@@ -581,7 +636,9 @@ button:focus-visible {
   margin-top: auto;
 }
 
-/* ========== PRICING ========== */
+/* ==============================
+   PRICING
+============================== */
 
 .pricing {
   background: var(--light);
@@ -688,7 +745,9 @@ button:focus-visible {
   max-width: 950px;
 }
 
-/* ========== PROCESS ========== */
+/* ==============================
+   PROCESS
+============================== */
 
 .process-grid {
   display: grid;
@@ -717,7 +776,9 @@ button:focus-visible {
   color: #777;
 }
 
-/* ========== CONTACT ========== */
+/* ==============================
+   CONTACT
+============================== */
 
 .contact {
   background: #171717;
@@ -757,7 +818,9 @@ button:focus-visible {
   margin-top: 24px;
 }
 
-/* ========== FOOTER ========== */
+/* ==============================
+   FOOTER
+============================== */
 
 footer {
   padding: 28px;
@@ -774,7 +837,9 @@ footer {
   margin: auto;
 }
 
-/* ========== MOBILE ========== */
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width: 900px) {
 
@@ -849,6 +914,15 @@ footer {
   .experience-preview {
     height: 290px;
   }
+
+  .intro {
+    padding: 85px 20px;
+  }
+
+  .intro-title {
+    font-size: clamp(23px, 4.5vw, 35px);
+    letter-spacing: -1px;
+  }
 }
 
 @media(max-width:480px) {
@@ -911,6 +985,13 @@ footer {
   .price.price-custom {
     font-size: 16px;
   }
+
+  .intro-title {
+    font-size: clamp(21px, 5.7vw, 27px);
+    line-height: 1.4;
+    gap: 7px;
+    letter-spacing: -.7px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -927,52 +1008,13 @@ footer {
 }
 
 </style>
-  
-<!-- SOCIAL MEDIA LINK PREVIEW -->
-
-<meta property="og:type" content="website">
-
-<meta property="og:site_name" content="Minimal Studio">
-
-<meta property="og:title" content="Minimal Studio">
-
-<meta property="og:description"
-content="Photography · Real Estate · 360° Experiences">
-
-<meta property="og:url"
-content="https://lsminimalstudio.github.io/home/">
-
-<meta property="og:image"
-content="https://lsminimalstudio.github.io/home/og-image.png">
-
-<meta property="og:image:secure_url"
-content="https://lsminimalstudio.github.io/home/og-image.png">
-
-<meta property="og:image:type" content="image/png">
-
-<meta property="og:image:width" content="1731">
-<meta property="og:image:height" content="909">
-
-<meta property="og:image:alt"
-content="Minimal Studio — Photography & 360° Experiences">
-
-<!-- WHATSAPP / X PREVIEW -->
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="Minimal Studio">
-
-<meta name="twitter:description"
-content="Photography · Real Estate · 360° Experiences">
-
-<meta name="twitter:image"
-content="https://lsminimalstudio.github.io/home/og-image.png">
-
 </head>
 
 <body>
 
-<!-- ========== NAVIGATION ========== -->
+<!-- ==============================
+     NAVIGATION
+============================== -->
 
 <header class="nav">
 
@@ -1044,12 +1086,13 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </div>
 
 </nav>
-
 </header>
 
 <main>
 
-<!-- ========== HERO ========== -->
+<!-- ==============================
+     HERO
+============================== -->
 
 <section class="hero" id="home">
 
@@ -1093,7 +1136,9 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
 
 </section>
 
-<!-- ========== INTRO ========== -->
+<!-- ==============================
+     INTRO - TWO CENTERED LINES
+============================== -->
 
 <div class="intro container" id="about">
 
@@ -1101,9 +1146,16 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
     Το Studio
   </p>
 
-  <h2 data-i18n="introTitle">
-    Κάθε χώρος έχει μια ιστορία.
-    Εμείς την αναδεικνύουμε.
+  <h2 class="intro-title">
+
+    <span data-i18n="introLine1">
+      Κάθε χώρος έχει μια ιστορία.
+    </span>
+
+    <span data-i18n="introLine2">
+      Εμείς την αναδεικνύουμε.
+    </span>
+
   </h2>
 
   <p class="subtitle" data-i18n="introDescription">
@@ -1114,7 +1166,9 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
 
 </div>
 
-<!-- ========== SERVICES ========== -->
+<!-- ==============================
+     SERVICES
+============================== -->
 
 <section class="services" id="services">
 
@@ -1218,10 +1272,11 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </div>
 
 </div>
-
 </section>
 
-<!-- ========== 360 EXPERIENCES ========== -->
+<!-- ==============================
+     360 EXPERIENCES
+============================== -->
 
 <section class="experiences" id="experiences">
 
@@ -1312,7 +1367,6 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
         </a>
 
       </div>
-
     </article>
 
     <!-- STREET VIEW -->
@@ -1387,10 +1441,11 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </div>
 
 </div>
-
 </section>
 
-<!-- ========== PRICING ========== -->
+<!-- ==============================
+     PRICING
+============================== -->
 
 <section class="pricing" id="pricing">
 
@@ -1649,10 +1704,11 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </p>
 
 </div>
-
 </section>
 
-<!-- ========== PROCESS ========== -->
+<!-- ==============================
+     PROCESS
+============================== -->
 
 <section id="process">
 
@@ -1717,10 +1773,11 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </div>
 
 </div>
-
 </section>
 
-<!-- ========== CONTACT ========== -->
+<!-- ==============================
+     CONTACT
+============================== -->
 
 <section class="contact" id="contact">
 
@@ -1767,12 +1824,13 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
   </a>
 
 </div>
-
 </section>
 
 </main>
 
-<!-- ========== FOOTER ========== -->
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
 
@@ -1799,14 +1857,9 @@ content="https://lsminimalstudio.github.io/home/og-image.png">
 
 <script>
 
-/* ==========================================
-   BILINGUAL CONTENT
-
-   EL = Ελληνικά
-   EN = English
-
-   Όλες οι τιμές σε € παραμένουν ίδιες.
-========================================== */
+/* ==============================
+   TRANSLATIONS
+============================== */
 
 const translations = {
 
@@ -1831,8 +1884,10 @@ const translations = {
 
     introLabel: "Το Studio",
 
-    introTitle:
-      "Κάθε χώρος έχει μια ιστορία. Εμείς την αναδεικνύουμε.",
+    /* Two separate centered lines */
+
+    introLine1: "Κάθε χώρος έχει μια ιστορία.",
+    introLine2: "Εμείς την αναδεικνύουμε.",
 
     introDescription:
       "Φωτογράφιση ακινήτων, δημιουργικό οπτικό περιεχόμενο και εμπειρίες 360°. Προσεγμένες εικόνες που αναδεικνύουν χώρους, επιχειρήσεις και ξεχωριστές στιγμές.",
@@ -1858,7 +1913,6 @@ const translations = {
     exploreProjects: "Δες τις φωτογραφίες →",
 
     tourLabel: "Πέρα από τα όρια της εικόνας",
-
     tourHeading: "Ανακάλυψε τους χώρους σε 360°",
 
     tourDescription:
@@ -1942,6 +1996,7 @@ const translations = {
 
     tourFeature1: "Έως 5 πανοραμικά σημεία 360°",
     tourFeature2: "Διαδραστική πλοήγηση μεταξύ χώρων",
+    tourFeature3: "Σύνδεσμος για το site",
 
     requestQuote: "Ζήτησε προσφορά →",
 
@@ -1967,9 +2022,7 @@ const translations = {
       "Παραλαμβάνεις έτοιμο υλικό για ιστοσελίδες, αγγελίες και ψηφιακά κανάλια.",
 
     contactLabel: "Ξεκίνα ένα Project",
-
-    contactHeading:
-      "Ας Δημιουργήσουμε Κάτι Ξεχωριστό.",
+    contactHeading: "Ας Δημιουργήσουμε Κάτι Ξεχωριστό.",
 
     contactDescription:
       "Έχεις ένα ακίνητο, μια επιχείρηση ή κάποιο νέο project; Επικοινώνησε μαζί μας για να συζητήσουμε τις ανάγκες σου.",
@@ -1977,6 +2030,7 @@ const translations = {
     footerText: "Φωτογραφία · Χώροι · Εμπειρίες 360°",
 
     emailSubject: "Αίτημα προσφοράς",
+
     emailBody:
       "Γεια σας,\n\nΕνδιαφέρομαι για την υπηρεσία: {service}\n\nΘα ήθελα να μάθω περισσότερα σχετικά με τη διαθεσιμότητα και το κόστος.\n\nΕυχαριστώ.",
 
@@ -2013,8 +2067,10 @@ const translations = {
 
     introLabel: "The Studio",
 
-    introTitle:
-      "Every space has a story. We make it visible.",
+    /* Two separate centered lines */
+
+    introLine1: "Every space has a story.",
+    introLine2: "We make it visible.",
 
     introDescription:
       "Real estate photography, visual storytelling and immersive 360° experiences. Thoughtfully created to showcase spaces, businesses and moments at their best.",
@@ -2123,7 +2179,7 @@ const translations = {
 
     tourFeature1: "Up to 5 panoramic 360° positions",
     tourFeature2: "Interactive navigation between spaces",
-    tourFeature3: "Website embedding code or shareable link",
+    tourFeature3: "Shareable website link",
 
     requestQuote: "Request a Quote →",
 
@@ -2149,9 +2205,7 @@ const translations = {
       "Receive your finished material, ready for your website, property listings or digital channels.",
 
     contactLabel: "Start a Project",
-
-    contactHeading:
-      "Let's Create Something Beautiful.",
+    contactHeading: "Let's Create Something Beautiful.",
 
     contactDescription:
       "Have a property, business or upcoming project? Get in touch and let's discuss how we can bring your vision to life.",
@@ -2159,6 +2213,7 @@ const translations = {
     footerText: "Photography · Spaces · 360° Experiences",
 
     emailSubject: "Quote Request",
+
     emailBody:
       "Hello,\n\nI'm interested in the following service: {service}\n\nI'd like to know more about availability and pricing.\n\nThank you.",
 
@@ -2177,9 +2232,9 @@ const translations = {
 };
 
 
-/* ==========================================
+/* ==============================
    LANGUAGE SWITCHING
-========================================== */
+============================== */
 
 function getPreferredLanguage() {
 
@@ -2218,11 +2273,14 @@ function setLanguage(lang) {
 
   const t = translations[lang];
 
-  /* Update HTML language */
-
   document.documentElement.lang = lang;
 
-  /* Update all translated elements */
+  /*
+    Each translated element is updated separately.
+
+    The intro title uses TWO SPAN ELEMENTS,
+    therefore the two-line layout is preserved.
+  */
 
   document.querySelectorAll(
     "[data-i18n]"
@@ -2236,7 +2294,7 @@ function setLanguage(lang) {
 
   });
 
-  /* Update browser tab and description */
+  /* Browser title and meta description */
 
   document.title = lang === "el"
     ? "Minimal Studio | Φωτογραφία & Εμπειρίες 360°"
@@ -2249,7 +2307,7 @@ function setLanguage(lang) {
     t.metaDescription
   );
 
-  /* Update active language button */
+  /* Language buttons */
 
   document.querySelectorAll(
     ".lang-btn"
@@ -2270,15 +2328,10 @@ function setLanguage(lang) {
 
   });
 
-  /* Update menu accessibility */
-
   updateMenuLabel();
-
-  /* Update email links */
-
   updateEmailLinks();
 
-  /* Save preferred language */
+  /* Remember language preference */
 
   try {
 
@@ -2288,7 +2341,7 @@ function setLanguage(lang) {
     );
 
   } catch (error) {
-    // Page works without localStorage.
+    // Site works without storage.
   }
 
 }
@@ -2311,12 +2364,9 @@ document.querySelectorAll(
 });
 
 
-/* ==========================================
-   EMAIL QUOTE LINKS
-
-   Each pricing card opens an email
-   with the selected service and language.
-========================================== */
+/* ==============================
+   QUOTE EMAIL LINKS
+============================== */
 
 function createEmailLink(serviceKey = null) {
 
@@ -2369,9 +2419,9 @@ function updateEmailLinks() {
 }
 
 
-/* ==========================================
-   MOBILE NAVIGATION
-========================================== */
+/* ==============================
+   MOBILE MENU
+============================== */
 
 const menu = document.getElementById(
   "menuToggle"
@@ -2432,16 +2482,16 @@ nav.querySelectorAll("a").forEach(link => {
 });
 
 
-/* ==========================================
-   EXISTING REAL PHOTOS
+/* ==============================
+   EXISTING PHOTOS
+============================== */
 
-   Keeps the two existing service images
-   and attempts to retrieve photos from
-   real-estate/ and events/.
+/*
+  Reads images from existing HTML galleries.
 
-   If loading fails, existing thumbnails
-   remain visible.
-========================================== */
+  If images cannot be loaded, current
+  thumbnail images stay visible.
+*/
 
 async function useGalleryPhoto(
   page,
@@ -2527,16 +2577,16 @@ async function useGalleryPhoto(
 }
 
 
-/* ==========================================
-   INITIALIZE WEBSITE
-========================================== */
+/* ==============================
+   INITIALIZATION
+============================== */
 
-/* Apply initial language */
+/* Apply selected language */
 
 setLanguage(currentLanguage);
 
 
-/* Load photos from existing pages */
+/* Load existing gallery photos */
 
 if (
   location.protocol === "https:" ||
@@ -2558,7 +2608,7 @@ if (
 }
 
 
-/* Automatic footer year */
+/* Footer year */
 
 document.getElementById(
   "year"
