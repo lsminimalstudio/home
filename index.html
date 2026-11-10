@@ -4,802 +4,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Minimal Studio — Φωτογράφιση ακινήτων, επιχειρήσεων, εκδηλώσεων και 360° virtual tours.">
 <meta name="theme-color" content="#ffffff">
-<title>Minimal Studio | Photography & 360° Tours</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Minimal Studio — Real estate photography, business visuals, Google Street View photography and 360° virtual tours.">
+<title>Minimal Studio | Photography & 360° Experiences</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --background: #ffffff;
-  --surface: #f7f7f5;
-  --ink: #171717;
-  --muted: #737373;
-  --line: #e9e9e6;
-  --radius: 14px;
-  --max-width: 1180px;
+  --black:#171717;
+  --grey:#777;
+  --light:#f7f7f5;
+  --border:#e8e8e6;
+  --white:#fff;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:auto;padding:0 26px}
+section{padding:95px 0}
+.eyebrow{font-size:11px;letter-spacing:2.3px;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:14px}
+.heading{font-size:clamp(30px,4vw,45px);line-height:1.2;letter-spacing:-1.8px;font-weight:600}
+.subtitle{font-size:15px;color:var(--grey);max-width:640px;margin-top:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;background:#171717;color:#fff;border-radius:8px;font-size:13px;font-weight:600;transition:.25s}
+.btn:hover{background:#444}
+.btn-light{background:#fff;color:#171717}
+.btn-light:hover{background:#e7e7e7}
+.btn-outline{background:transparent;border:1px solid #aaa;color:#fff}
+.btn-outline:hover{background:#ffffff22}
+.section-header{margin-bottom:36px}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* NAV */
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  background: var(--background);
-  color: var(--ink);
-  font-family: "Inter", sans-serif;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 0 28px;
-}
-
-section {
-  padding: 100px 0;
-}
-
-.eyebrow {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-
-.section-title {
-  font-size: clamp(30px, 4vw, 46px);
-  font-weight: 600;
-  letter-spacing: -1.8px;
-  line-height: 1.15;
-}
-
-.section-description {
-  max-width: 600px;
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.section-heading {
-  margin-bottom: 42px;
-}
-
-/* NAVIGATION */
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 76px;
-  background: rgba(255,255,255,.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
-  z-index: 1000;
-}
-
-.nav-inner {
-  height: 100%;
-  max-width: 1280px;
-  padding: 0 28px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.8px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: #555;
-  transition: color .2s;
-}
-
-.nav-links a:hover {
-  color: #000;
-}
-
-.nav-contact {
-  background: #171717;
-  color: #fff !important;
-  padding: 11px 18px;
-  border-radius: 8px;
-}
-
-.menu-toggle {
-  display: none;
-  border: 0;
-  background: transparent;
-  font-size: 25px;
-  padding: 8px;
-}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#ffffffed;backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{height:74px;max-width:1250px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:19px;letter-spacing:-.7px;font-weight:700}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:13px;color:#555}
+.nav-links a:hover{color:#000}
+.nav-links .nav-cta{background:#171717;color:white;padding:11px 16px;border-radius:8px}
+.menu-toggle{display:none;border:0;background:none;font-size:25px}
 
 /* HERO */
 
-.hero {
-  margin-top: 76px;
-  min-height: min(780px, 88svh);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #222;
-}
-
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .75;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.20),
-      rgba(0,0,0,.50)
-    );
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 40px 24px;
-  color: #fff;
-  max-width: 900px;
-}
-
-.hero-label {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 22px;
-  opacity: .9;
-}
-
-.hero h1 {
-  font-size: clamp(52px, 9vw, 104px);
-  font-weight: 600;
-  letter-spacing: -5px;
-  line-height: 1.05;
-}
-
-.hero p {
-  font-size: clamp(15px, 2vw, 19px);
-  font-weight: 300;
-  margin: 24px auto 0;
-  max-width: 650px;
-  color: rgba(255,255,255,.91);
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 23px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: .25s;
-}
-
-.button-white {
-  background: #fff;
-  color: #171717;
-}
-
-.button-white:hover {
-  background: #eaeaea;
-}
-
-.button-outline {
-  border: 1px solid rgba(255,255,255,.65);
-  color: #fff;
-}
-
-.button-outline:hover {
-  background: rgba(255,255,255,.15);
-}
-
-.button-dark {
-  background: #171717;
-  color: #fff;
-}
-
-.button-dark:hover {
-  background: #3b3b3b;
-}
+.hero{height:min(810px,88svh);min-height:520px;margin-top:74px;padding:0;position:relative;background:#242424;display:grid;place-items:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#0004,#0008)}
+.hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:25px;max-width:950px}
+.hero-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:22px}
+.hero h1{font-size:clamp(49px,9vw,100px);font-weight:600;letter-spacing:-5px;line-height:1.05}
+.hero p{font-size:clamp(15px,2vw,19px);font-weight:300;max-width:670px;margin:23px auto 0;color:#ffffffe0}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
 
 /* INTRO */
 
-.intro {
-  text-align: center;
-  padding: 95px 28px;
-}
-
-.intro h2 {
-  font-size: clamp(26px, 3.5vw, 42px);
-  font-weight: 500;
-  letter-spacing: -1.5px;
-  line-height: 1.3;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-.intro p:last-child {
-  font-size: 15px;
-  color: var(--muted);
-  max-width: 650px;
-  margin: 24px auto 0;
-}
+.intro{text-align:center;padding:90px 25px}
+.intro h2{font-size:clamp(27px,3.4vw,42px);max-width:800px;margin:auto;font-weight:500;letter-spacing:-1.4px;line-height:1.35}
+.intro .subtitle{margin:20px auto 0}
 
 /* SERVICES */
 
-.services {
-  background: var(--surface);
-}
+.services{background:var(--light)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service-card{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #0000000b}
+.service-cover{height:265px;background:#e8e8e5;overflow:hidden}
+.service-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.service-card:hover .service-cover img{transform:scale(1.04)}
+.service-body{padding:27px;flex:1;display:flex;flex-direction:column}
+.service-num{font-size:11px;color:#999;margin-bottom:11px}
+.service-body h3{font-size:21px;font-weight:600;letter-spacing:-.65px}
+.service-body p{font-size:14px;color:var(--grey);margin:12px 0 23px}
+.service-link{font-size:13px;font-weight:600;margin-top:auto}
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
+/* PRICING */
 
-.service-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
-}
+.pricing{background:#fff}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.price-card{padding:31px;border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column}
+.price-card.featured{background:var(--light)}
+.price-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.price-card h3{font-size:20px;letter-spacing:-.6px}
+.price-label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.price{font-size:34px;letter-spacing:-1.6px;line-height:1.1;font-weight:600;white-space:nowrap}
+.price small{font-size:12px;color:#888;letter-spacing:0;font-weight:400;display:block;margin-bottom:4px}
+.price-card .desc{font-size:14px;color:#777;margin-top:16px}
+.price-list{list-style:none;margin:22px 0 28px;display:grid;gap:11px}
+.price-list li{font-size:13px;display:flex;align-items:start;gap:9px}
+.price-list li::before{content:"✓";font-weight:600}
+.price-card .btn{margin-top:auto;text-align:center}
+.price-footnote{margin-top:26px;font-size:12px;color:#888;max-width:950px}
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0,0,0,.06);
-}
+/* 360 */
 
-.service-image {
-  height: 260px;
-  background: #ededeb;
-  overflow: hidden;
-}
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s;
-}
-
-.service-card:hover img {
-  transform: scale(1.04);
-}
-
-.service-content {
-  padding: 27px;
-  flex: 1;
-}
-
-.service-number {
-  font-size: 11px;
-  color: #888;
-  margin-bottom: 13px;
-}
-
-.service-content h3 {
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -.6px;
-  margin-bottom: 12px;
-}
-
-.service-content p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.service-bottom {
-  margin-top: 25px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.service-bottom span {
-  margin-left: 6px;
-}
-
-/* PORTFOLIO */
-
-.portfolio-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 32px;
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.filter {
-  background: #fff;
-  color: #777;
-  padding: 9px 16px;
-  border: 1px solid var(--line);
-  border-radius: 50px;
-  font-size: 12px;
-  transition: .2s;
-}
-
-.filter.active,
-.filter:hover {
-  background: #171717;
-  color: #fff;
-  border-color: #171717;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  background: var(--surface);
-  aspect-ratio: 4 / 3;
-  border: 0;
-  padding: 0;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.045);
-}
-
-.gallery-item:focus-visible {
-  outline: 3px solid #777;
-  outline-offset: 3px;
-}
-
-.gallery-item[hidden] {
-  display: none;
-}
-
-.gallery-note {
-  color: var(--muted);
-  font-size: 13px;
-  text-align: center;
-  margin-top: 22px;
-}
-
-.portfolio-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-/* TOUR */
-
-.tour-section {
-  background: #f7f7f5;
-}
-
-.tour-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.tour-preview {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: #242424;
-  border-radius: 14px;
-}
-
-.tour-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .85;
-}
-
-.tour-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #fff;
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  padding-left: 4px;
-}
-
-.tour-text h2 {
-  font-size: clamp(30px, 4vw, 43px);
-  letter-spacing: -1.5px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 22px;
-}
-
-.tour-text p {
-  color: var(--muted);
-  font-size: 15px;
-  margin-bottom: 14px;
-}
-
-.tour-text .button {
-  margin-top: 16px;
-}
+.experiences{background:var(--light)}
+.experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.experience-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.experience-preview{aspect-ratio:16/10;background:#dededb;position:relative;overflow:hidden}
+.experience-preview img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.experience-preview:hover img{transform:scale(1.04)}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:65px;height:65px;background:#fff;border-radius:50%;display:grid;place-items:center;font-size:23px;padding-left:4px;box-shadow:0 4px 20px #0003}
+.experience-body{padding:28px;display:flex;flex-direction:column;flex:1}
+.experience-body h3{font-size:22px;letter-spacing:-.7px}
+.experience-body p{color:#777;font-size:14px;margin:13px 0 23px}
+.experience-body .btn{align-self:flex-start;margin-top:auto}
+.experience-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888;margin-bottom:10px}
 
 /* PROCESS */
 
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 48px;
-}
-
-.process-step {
-  border-top: 1px solid #d9d9d9;
-  padding-top: 25px;
-}
-
-.process-step .step-number {
-  font-size: 13px;
-  color: #999;
-  margin-bottom: 25px;
-}
-
-.process-step h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.process-step p {
-  color: var(--muted);
-  font-size: 14px;
-}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:43px}
+.process-step{border-top:1px solid #ddd;padding-top:23px}
+.step-number{color:#aaa;font-size:13px}
+.process-step h3{font-size:20px;margin:20px 0 10px}
+.process-step p{font-size:14px;color:#777}
 
 /* CONTACT */
 
-.contact {
-  text-align: center;
-  background: #171717;
-  color: #fff;
-  padding: 110px 25px;
-}
-
-.contact .eyebrow {
-  color: #aaa;
-}
-
-.contact h2 {
-  font-size: clamp(35px, 5vw, 60px);
-  font-weight: 600;
-  letter-spacing: -2px;
-  line-height: 1.15;
-}
-
-.contact p {
-  max-width: 530px;
-  color: #aaa;
-  margin: 24px auto 30px;
-  font-size: 15px;
-}
-
-.contact-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.contact-email {
-  display: block;
-  margin-top: 25px;
-  color: #bbb;
-  font-size: 13px;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 28px;
-  border-top: 1px solid var(--line);
-  color: #888;
-  font-size: 12px;
-}
-
-.footer-inner {
-  max-width: 1180px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.footer-inner a:hover {
-  color: #111;
-}
-
-/* LIGHTBOX */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.96);
-  z-index: 3000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 55px;
-}
-
-.lightbox.open {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 100%;
-  max-height: 88vh;
-  object-fit: contain;
-}
-
-.lightbox button {
-  position: absolute;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 30px;
-  padding: 10px;
-}
-
-.lightbox-close {
-  top: 14px;
-  right: 25px;
-}
-
-.lightbox-prev {
-  left: 12px;
-  top: 50%;
-}
-
-.lightbox-next {
-  right: 12px;
-  top: 50%;
-}
+.contact{background:#171717;color:#fff;text-align:center;padding:105px 25px}
+.contact .eyebrow{color:#bbb}
+.contact h2{font-size:clamp(35px,5vw,58px);line-height:1.14;letter-spacing:-2px}
+.contact p{color:#aaa;max-width:550px;margin:23px auto 30px;font-size:15px}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.contact-email{display:block;color:#aaa;font-size:13px;margin-top:24px}
+footer{padding:28px;color:#888;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1180px;margin:auto}
 
 /* MOBILE */
 
-@media (max-width: 800px) {
-  .nav {
-    height: 68px;
-  }
-
-  .hero {
-    margin-top: 68px;
-    min-height: 75svh;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 68px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 12px 28px 22px;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 12px 0;
-  }
-
-  .nav-links .nav-contact {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  section {
-    padding: 75px 0;
-  }
-
-  .services-grid,
-  .tour-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tour-grid {
-    gap: 32px;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .service-image {
-    height: 230px;
-  }
+@media(max-width:800px){
+ .nav-inner{height:68px}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #eee;padding:15px 26px 24px;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:11px 0}
+ .nav-links .nav-cta{text-align:center;margin-top:8px}
+ .hero{margin-top:68px;height:76svh}
+ section{padding:70px 0}
+ .services-grid,.pricing-grid,.experience-grid{grid-template-columns:1fr}
+ .process-grid{grid-template-columns:1fr;gap:25px}
+ .service-cover{height:245px}
 }
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 18px;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-    letter-spacing: -2.5px;
-  }
-
-  .hero-label {
-    letter-spacing: 2px;
-  }
-
-  .gallery {
-    gap: 7px;
-  }
-
-  .gallery-item {
-    aspect-ratio: 1 / 1;
-  }
-
-  .lightbox {
-    padding: 15px;
-  }
-
-  .lightbox-prev {
-    left: 2px;
-  }
-
-  .lightbox-next {
-    right: 2px;
-  }
-
-  .section-title {
-    letter-spacing: -1px;
-  }
+@media(max-width:480px){
+ .container{padding:0 18px}
+ .hero h1{letter-spacing:-2px}
+ .hero-label{letter-spacing:1.5px}
+ .price-card{padding:24px}
+ .price{font-size:29px}
+ .service-cover{height:215px}
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-    animation: none !important;
-  }
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
 <header class="nav">
-  <nav class="nav-inner" aria-label="Κύρια πλοήγηση">
-    <a class="logo" href="#home">Minimal Studio.</a>
-
-    <button
-      class="menu-toggle"
-      id="menu-toggle"
-      aria-label="Άνοιγμα μενού"
-      aria-expanded="false"
-      aria-controls="nav-links"
-    >☰</button>
-
-    <div class="nav-links" id="nav-links">
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#virtual-tours">360° Tours</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-contact">Get in Touch</a>
-    </div>
-  </nav>
+ <nav class="nav-inner" aria-label="Main navigation">
+  <a class="logo" href="#home">Minimal Studio.</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <div class="nav-links" id="navLinks">
+   <a href="#services">Services</a>
+   <a href="#pricing">Pricing</a>
+   <a href="#experiences">360° Experiences</a>
+   <a href="#about">About</a>
+   <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+ </nav>
 </header>
 
 <main>
@@ -807,785 +182,387 @@ footer {
 <!-- HERO -->
 
 <section class="hero" id="home">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-  >
-    <source src="villa.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <div class="hero-label">
-      Photography · Spaces · Visual Stories
-    </div>
-
-    <h1>Minimal Studio.</h1>
-
-    <p>
-      Capturing spaces, details and moments
-      through photography and immersive visual experiences.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="button button-white" href="#portfolio">
-        Explore Our Work
-      </a>
-
-      <a class="button button-outline" href="#contact">
-        Let's Work Together
-      </a>
-    </div>
+ <video autoplay muted loop playsinline preload="metadata">
+  <source src="villa.mp4" type="video/mp4">
+ </video>
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+  <div class="hero-label">Photography · Spaces · Visual Stories</div>
+  <h1>Minimal Studio.</h1>
+  <p>Capturing spaces, details and moments through photography and immersive visual experiences.</p>
+  <div class="hero-actions">
+   <a class="btn btn-light" href="#services">Explore Services</a>
+   <a class="btn btn-outline" href="#contact">Let's Work Together</a>
   </div>
+ </div>
 </section>
 
 <!-- INTRO -->
 
 <div class="intro container" id="about">
-  <p class="eyebrow">The Studio</p>
-
-  <h2>
-    Every space has a story.
-    We make it visible.
-  </h2>
-
-  <p>
-    Real estate photography, visual storytelling
-    and immersive 360° experiences.
-    Thoughtfully created to showcase spaces,
-    businesses and moments at their best.
-  </p>
+ <p class="eyebrow">The Studio</p>
+ <h2>Every space has a story.<br>We make it visible.</h2>
+ <p class="subtitle">Real estate photography, visual storytelling and immersive 360° experiences. Thoughtfully created to showcase spaces, businesses and moments at their best.</p>
 </div>
 
 <!-- SERVICES -->
 
 <section class="services" id="services">
-  <div class="container">
-
-    <div class="section-heading">
-      <p class="eyebrow">What We Do</p>
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-description">
-        Visual content designed to highlight
-        the character and value of every space.
-      </p>
-    </div>
-
-    <div class="services-grid">
-
-      <!-- REAL ESTATE -->
-
-      <a href="real-estate/" class="service-card">
-        <div class="service-image">
-          <img id="service-real-img"
-               alt="Real estate photography by Minimal Studio"
-               loading="lazy">
-        </div>
-
-        <div class="service-content">
-          <div class="service-number">01 / Photography</div>
-
-          <h3>Real Estate Photography</h3>
-
-          <p>
-            Professional photography for properties,
-            Airbnb, hotels and architectural spaces.
-          </p>
-
-          <div class="service-bottom">
-            Explore Projects <span>→</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- EVENTS -->
-
-      <a href="events/" class="service-card">
-        <div class="service-image">
-          <img id="service-events-img"
-               alt="Events photography by Minimal Studio"
-               loading="lazy">
-        </div>
-
-        <div class="service-content">
-          <div class="service-number">02 / Visual Stories</div>
-
-          <h3>Events & Aesthetics</h3>
-
-          <p>
-            Capturing memorable moments,
-            meaningful details and the atmosphere
-            of special occasions.
-          </p>
-
-          <div class="service-bottom">
-            Explore Projects <span>→</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 360 TOURS -->
-
-      <a href="#virtual-tours" class="service-card">
-        <div class="service-image">
-          <img id="service-tour-img"
-               alt="360 degree spaces by Minimal Studio"
-               loading="lazy">
-        </div>
-
-        <div class="service-content">
-          <div class="service-number">03 / Immersive Experiences</div>
-
-          <h3>360° Virtual Tours</h3>
-
-          <p>
-            Immersive presentations, panoramic
-            imagery and virtual walkthroughs
-            for properties and businesses.
-          </p>
-
-          <div class="service-bottom">
-            View 360° Projects <span>→</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- COMMERCIAL -->
-
-      <a href="#contact" class="service-card">
-        <div class="service-image">
-          <img id="service-commercial-img"
-               alt="Photography for spaces and businesses"
-               loading="lazy">
-        </div>
-
-        <div class="service-content">
-          <div class="service-number">04 / Business Visuals</div>
-
-          <h3>Business & Website Content</h3>
-
-          <p>
-            Clean, authentic imagery for websites,
-            Google Business Profiles and social media.
-          </p>
-
-          <div class="service-bottom">
-            Request a Quote <span>→</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
+ <div class="container">
+  <div class="section-header">
+   <p class="eyebrow">What We Do</p>
+   <h2 class="heading">Our Services</h2>
+   <p class="subtitle">Visual content designed to highlight the character and value of every space.</p>
   </div>
-</section>
 
-<!-- PORTFOLIO -->
+  <div class="services-grid">
 
-<section id="portfolio">
-  <div class="container">
-
-    <div class="portfolio-header">
-      <div>
-        <p class="eyebrow">Selected Projects</p>
-        <h2 class="section-title">Our Work</h2>
-        <p class="section-description">
-          A selection of our real photography projects.
-        </p>
-      </div>
-
-      <div class="filters" aria-label="Φίλτρα portfolio">
-        <button class="filter active" data-filter="all">
-          All
-        </button>
-
-        <button class="filter" data-filter="real">
-          Real Estate
-        </button>
-
-        <button class="filter" data-filter="events">
-          Events
-        </button>
-      </div>
+   <a href="real-estate/" class="service-card">
+    <div class="service-cover">
+     <img id="realCover" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&q=80" alt="Real Estate Photography" loading="lazy">
     </div>
-
-    <div class="gallery" id="main-gallery">
-      <!-- Οι πραγματικές φωτογραφίες φορτώνονται εδώ -->
+    <div class="service-body">
+     <div class="service-num">01 / Photography</div>
+     <h3>Real Estate Photography</h3>
+     <p>Professional photography for properties, Airbnb, hotels and architectural spaces.</p>
+     <div class="service-link">Explore Projects →</div>
     </div>
+   </a>
 
-    <p id="gallery-status" class="gallery-note" role="status">
-      Loading portfolio...
-    </p>
-
-    <div class="portfolio-links">
-      <a href="real-estate/" class="button button-dark">
-        Real Estate Portfolio →
-      </a>
-
-      <a href="events/" class="button button-dark">
-        Events Portfolio →
-      </a>
+   <a href="events/" class="service-card">
+    <div class="service-cover">
+     <img id="eventsCover" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80" alt="Events Photography" loading="lazy">
     </div>
+    <div class="service-body">
+     <div class="service-num">02 / Visual Stories</div>
+     <h3>Events & Aesthetics</h3>
+     <p>Capturing memorable moments, meaningful details and the atmosphere of special occasions.</p>
+     <div class="service-link">Explore Projects →</div>
+    </div>
+   </a>
+
+   <a href="#experiences" class="service-card">
+    <div class="service-cover">
+     <img src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg" alt="360 Virtual Tours" loading="lazy">
+    </div>
+    <div class="service-body">
+     <div class="service-num">03 / Immersive Experiences</div>
+     <h3>360° Virtual Tours</h3>
+     <p>Immersive presentations and walkthrough experiences for properties and businesses.</p>
+     <div class="service-link">Explore 360° Tours →</div>
+    </div>
+   </a>
+
+   <a href="#pricing" class="service-card">
+    <div class="service-cover">
+     <img id="businessCover" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=80" alt="Business Photography" loading="lazy">
+    </div>
+    <div class="service-body">
+     <div class="service-num">04 / Business Visuals</div>
+     <h3>Business & Website Content</h3>
+     <p>Professional imagery for websites, businesses, Google Business Profiles and social media.</p>
+     <div class="service-link">Explore Pricing →</div>
+    </div>
+   </a>
 
   </div>
+ </div>
 </section>
 
-<!-- 360 TOURS -->
+<!-- PRICING -->
 
-<section class="tour-section" id="virtual-tours">
-  <div class="container">
+<section class="pricing" id="pricing">
+ <div class="container">
+  <div class="section-header">
+   <p class="eyebrow">Simple & Transparent</p>
+   <h2 class="heading">Our Pricing</h2>
+   <p class="subtitle">Flexible photography and 360° packages tailored to your space. Every project is different — these are starting prices.</p>
+  </div>
 
-    <div class="tour-grid">
+  <div class="pricing-grid">
 
-      <a
-        class="tour-preview"
+   <article class="price-card">
+    <div class="price-label">01 / Real Estate</div>
+    <div class="price-top">
+     <h3>Property Photography</h3>
+     <div class="price"><small>From</small>90€</div>
+    </div>
+    <p class="desc">For Airbnb, property listings and professional spaces.</p>
+    <ul class="price-list">
+     <li>Up to 10 edited photographs</li>
+     <li>Professional color and exposure correction</li>
+     <li>Web-ready high-quality files</li>
+     <li>Online delivery</li>
+    </ul>
+    <a class="btn quote" data-service="Property Photography" href="#contact">Request a Quote →</a>
+   </article>
+
+   <article class="price-card">
+    <div class="price-label">02 / Business Photography</div>
+    <div class="price-top">
+     <h3>Website & Business Photos</h3>
+     <div class="price"><small>From</small>90€</div>
+    </div>
+    <p class="desc">Photography for websites, shops, cafes and business profiles.</p>
+    <ul class="price-list">
+     <li>Up to 10 edited photographs</li>
+     <li>Interior, exterior and selected details</li>
+     <li>Files optimized for web and social media</li>
+     <li>Online delivery</li>
+    </ul>
+    <a class="btn quote" data-service="Website & Business Photos" href="#contact">Request a Quote →</a>
+   </article>
+
+   <article class="price-card featured">
+    <div class="price-label">03 / Google Maps</div>
+    <div class="price-top">
+     <h3>Street View & 360° Photos</h3>
+     <div class="price"><small>From</small>35€</div>
+    </div>
+    <p class="desc">Standalone 360° panoramic photography without a complete virtual walkthrough.</p>
+    <ul class="price-list">
+     <li>1 panoramic 360° photo from 35€</li>
+     <li>3 panoramic 360° photos from 79€</li>
+     <li>Panorama editing and export</li>
+     <li>Google Maps publication by agreement, subject to platform support and approval</li>
+    </ul>
+    <a class="btn quote" data-service="Street View & 360° Photos" href="#contact">Request a Quote →</a>
+   </article>
+
+   <article class="price-card featured">
+    <div class="price-label">04 / 360° Experiences</div>
+    <div class="price-top">
+     <h3>Interactive Virtual Tour</h3>
+     <div class="price"><small>From</small>150€</div>
+    </div>
+    <p class="desc">Multi-point interactive panoramic tours for websites and properties.</p>
+    <ul class="price-list">
+     <li>Up to 5 panoramic 360° positions</li>
+     <li>Interactive navigation between spaces</li>
+     <li>Website embedding code or shareable link</li>
+     <li>Hosting and subscriptions quoted separately</li>
+    </ul>
+    <a class="btn quote" data-service="Interactive Virtual Tour" href="#contact">Request a Quote →</a>
+   </article>
+
+  </div>
+
+  <p class="price-footnote">Indicative starting prices for small, local projects. Final pricing depends on the size of the space, travel, editing and deliverables. Hosting fees, applicable VAT and additional requests are quoted separately. Walkthrough video production is priced individually.</p>
+ </div>
+</section>
+
+<!-- 360 EXPERIENCES -->
+
+<section class="experiences" id="experiences">
+ <div class="container">
+
+  <div class="section-header">
+   <p class="eyebrow">Explore Beyond the Frame</p>
+   <h2 class="heading">Discover Spaces in 360°</h2>
+   <p class="subtitle">From a single panoramic photo to a complete immersive experience. Explore two different ways to showcase a space.</p>
+  </div>
+
+  <div class="experience-grid">
+
+   <!-- WALKTHROUGH -->
+
+   <article class="experience-card">
+    <a class="experience-preview"
+       href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
+       target="_blank" rel="noopener noreferrer">
+     <img src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg"
+          alt="Minimal Studio virtual walkthrough example"
+          loading="lazy">
+     <span class="play">▶</span>
+    </a>
+    <div class="experience-body">
+     <div class="experience-label">01 / Full Experience</div>
+     <h3>Virtual Tours & Walkthroughs</h3>
+     <p>Explore a complete property through immersive video walkthroughs and 360° experiences. Ideal for real estate, hospitality and property presentations.</p>
+     <a class="btn"
         href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Δες τα 360° projects στο YouTube"
-      >
-        <img
-          src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg"
-          alt="Minimal Studio 360° Virtual Tours"
-          loading="lazy"
-        >
-        <div class="tour-play">▶</div>
-      </a>
-
-      <div class="tour-text">
-        <p class="eyebrow">Explore Beyond the Frame</p>
-
-        <h2>
-          Discover Spaces<br>
-          in 360°
-        </h2>
-
-        <p>
-          Explore properties and spaces through
-          panoramic imagery, immersive walkthroughs
-          and 360° visual storytelling.
-        </p>
-
-        <p>
-          See our existing Street View,
-          3D walkthrough and virtual tour projects.
-        </p>
-
-        <a
-          class="button button-dark"
-          href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Explore 360° Projects →
-        </a>
-      </div>
-
+        target="_blank" rel="noopener noreferrer">
+        Watch Walkthrough →
+     </a>
     </div>
+   </article>
+
+   <!-- GOOGLE STREET VIEW -->
+
+   <article class="experience-card">
+    <a class="experience-preview"
+       href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
+       target="_blank" rel="noopener noreferrer">
+     <img src="https://img.youtube.com/vi/Ro7iMbsFraQ/hqdefault.jpg"
+          alt="Minimal Studio Google Street View example"
+          loading="lazy">
+     <span class="play">▶</span>
+    </a>
+    <div class="experience-body">
+     <div class="experience-label">02 / Standalone Panoramas</div>
+     <h3>Street View & 360° Photos</h3>
+     <p>Showcase your business with one or more standalone panoramic photographs. An ideal option for shops, restaurants, Airbnb and Google Maps — without needing a full walkthrough.</p>
+     <a class="btn"
+        href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
+        target="_blank" rel="noopener noreferrer">
+        Watch Street View Example →
+     </a>
+    </div>
+   </article>
+
   </div>
+ </div>
 </section>
 
 <!-- PROCESS -->
 
-<section id="process">
-  <div class="container">
+<section>
+ <div class="container">
+  <p class="eyebrow">Our Approach</p>
+  <h2 class="heading">Simple. Thoughtful. Effective.</h2>
 
-    <p class="eyebrow">Our Approach</p>
-    <h2 class="section-title">Simple. Thoughtful. Effective.</h2>
-
-    <div class="process-grid">
-
-      <div class="process-step">
-        <p class="step-number">01</p>
-        <h3>Let's Talk</h3>
-        <p>
-          Tell us about your space, project
-          or business and what you want to showcase.
-        </p>
-      </div>
-
-      <div class="process-step">
-        <p class="step-number">02</p>
-        <h3>We Create</h3>
-        <p>
-          Photography and visual content
-          carefully tailored to your project.
-        </p>
-      </div>
-
-      <div class="process-step">
-        <p class="step-number">03</p>
-        <h3>You Showcase</h3>
-        <p>
-          Receive your edited visuals,
-          ready for your website,
-          listings or digital channels.
-        </p>
-      </div>
-
-    </div>
+  <div class="process-grid">
+   <div class="process-step">
+    <p class="step-number">01</p>
+    <h3>Let's Talk</h3>
+    <p>Tell us about your space, property or business and what you need to showcase.</p>
+   </div>
+   <div class="process-step">
+    <p class="step-number">02</p>
+    <h3>We Create</h3>
+    <p>Photography and visual experiences tailored to your project.</p>
+   </div>
+   <div class="process-step">
+    <p class="step-number">03</p>
+    <h3>You Showcase</h3>
+    <p>Receive your finished material ready for your website, listings or digital channels.</p>
+   </div>
   </div>
+ </div>
 </section>
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
-  <div class="container">
-
-    <p class="eyebrow">Start a Project</p>
-
-    <h2>
-      Let's Create<br>
-      Something Beautiful.
-    </h2>
-
-    <p>
-      Have a property, business or upcoming project?
-      Get in touch and let's discuss how
-      we can bring your vision to life.
-    </p>
-
-    <div class="contact-buttons">
-
-      <a
-        class="button button-white"
-        href="mailto:lsminimalstudio@gmail.com?subject=Project%20Inquiry%20-%20Minimal%20Studio"
-      >
-        Request a Quote →
-      </a>
-
-      <a
-        class="button button-outline"
-        href="https://instagram.com/minimals__"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
-
-    </div>
-
-    <a class="contact-email" href="mailto:lsminimalstudio@gmail.com">
-      lsminimalstudio@gmail.com
-    </a>
-
+ <div class="container">
+  <p class="eyebrow">Start a Project</p>
+  <h2>Let's Create<br>Something Beautiful.</h2>
+  <p>Have a property, business or upcoming project? Get in touch and let's discuss how we can bring your vision to life.</p>
+  <div class="contact-actions">
+   <a class="btn btn-light" id="emailButton"
+      href="mailto:lsminimalstudio@gmail.com?subject=Project%20Inquiry">
+      Request a Quote →
+   </a>
+   <a class="btn btn-outline"
+      href="https://instagram.com/minimals__"
+      target="_blank" rel="noopener noreferrer">
+      Instagram
+   </a>
   </div>
+  <a class="contact-email" href="mailto:lsminimalstudio@gmail.com">
+   lsminimalstudio@gmail.com
+  </a>
+ </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
-
 <footer>
-  <div class="footer-inner">
-    <span>© <span id="year"></span> Minimal Studio.</span>
-
-    <span>Photography · Spaces · 360° Experiences</span>
-
-    <a
-      href="https://instagram.com/minimals__"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram ↗
-    </a>
-  </div>
+ <div class="footer-inner">
+  <span>© <span id="year"></span> Minimal Studio.</span>
+  <span>Photography · Spaces · 360° Experiences</span>
+  <a href="https://instagram.com/minimals__" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+ </div>
 </footer>
-
-<!-- LIGHTBOX -->
-
-<div class="lightbox" id="lightbox"
-     role="dialog"
-     aria-modal="true"
-     aria-label="Προβολή φωτογραφίας">
-
-  <button class="lightbox-close"
-          id="lightbox-close"
-          aria-label="Κλείσιμο">×</button>
-
-  <button class="lightbox-prev"
-          id="lightbox-prev"
-          aria-label="Προηγούμενη φωτογραφία">‹</button>
-
-  <img id="lightbox-img" alt="">
-
-  <button class="lightbox-next"
-          id="lightbox-next"
-          aria-label="Επόμενη φωτογραφία">›</button>
-</div>
 
 <script>
 /*
-  MINIMAL STUDIO - PORTFOLIO LOADER
+  THUMBNAILS
 
-  Διαβάζει τις υπάρχουσες σελίδες:
+  Οι κάρτες έχουν ήδη ενδεικτικές εικόνες.
+  Μόλις η σελίδα φιλοξενείται στο ίδιο GitHub Pages
+  site με τα galleries, αναζητούμε τις πραγματικές
+  φωτογραφίες στα υπάρχοντα HTML αρχεία.
 
-  /home/real-estate/
-  /home/events/
-
-  και χρησιμοποιεί τις δικές σου φωτογραφίες.
-
-  Δεν απαιτεί να γράψεις τα filenames
-  μέσα στο index.html.
-
-  ΣΗΜΑΝΤΙΚΟ:
-  Οι υποσελίδες πρέπει να είναι στο ίδιο domain.
+  Οι αρχικοί σύνδεσμοι εικόνων παραμένουν fallback.
 */
 
-/* CONFIGURATION */
-
-const config = {
-  realEstatePage: "real-estate/",
-  eventsPage: "events/",
-  maxImagesPerCategory: 12
-};
-
-const gallery = document.getElementById("main-gallery");
-const galleryStatus = document.getElementById("gallery-status");
-
-let portfolioImages = [];
-let visibleImages = [];
-let currentImageIndex = 0;
-
-/* READ IMAGES FROM EXISTING HTML PAGE */
-
-async function loadImagesFromPage(pagePath) {
+async function useGalleryPhoto(page, imageId, imageIndex=0) {
   try {
-    const pageURL = new URL(pagePath, window.location.href);
+    const url = new URL(page, location.href);
+    const response = await fetch(url.href);
 
-    const response = await fetch(pageURL.href);
-
-    if (!response.ok) {
-      throw new Error("Could not load " + pageURL.href);
-    }
+    if (!response.ok) return;
 
     const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
 
-    const parser = new DOMParser();
-    const documentFromPage = parser.parseFromString(
-      html,
-      "text/html"
-    );
+    let imgs = [...doc.querySelectorAll(
+      ".gallery img, .portfolio img"
+    )];
 
-    /*
-      Πρώτα αναζητούμε εικόνες gallery.
-      Αν δεν υπάρχουν, δοκιμάζουμε main/section.
-      Δεν επιλέγουμε εικόνες από header/footer.
-    */
-
-    let imageElements = [
-      ...documentFromPage.querySelectorAll(
-        ".gallery img, .portfolio img"
-      )
-    ];
-
-    if (imageElements.length === 0) {
-      imageElements = [
-        ...documentFromPage.querySelectorAll(
-          "main img, section img"
-        )
-      ];
+    if (!imgs.length) {
+      imgs = [...doc.querySelectorAll("main img, section img")];
     }
 
-    const imageURLs = imageElements.map(img => {
-      const src =
-        img.getAttribute("data-src") ||
-        img.getAttribute("src");
+    const sources = imgs.map(img =>
+      img.getAttribute("data-src") ||
+      img.getAttribute("src")
+    ).filter(Boolean);
 
-      if (!src) return null;
+    if (!sources.length) return;
 
-      try {
-        return new URL(src, pageURL.href).href;
-      } catch {
-        return null;
-      }
-    });
+    const chosen = sources[imageIndex] || sources[0];
+    const fullURL = new URL(chosen, url.href).href;
 
-    return [...new Set(imageURLs.filter(Boolean))];
+    const target = document.getElementById(imageId);
 
-  } catch (error) {
-    console.warn("Portfolio loading error:", error);
-    return [];
+    if (target) target.src = fullURL;
+  } catch(error) {
+    console.warn("Gallery thumbnail unavailable:", page, error);
   }
 }
 
-/* GALLERY CREATION */
-
-function createGalleryItem(src, category) {
-  const button = document.createElement("button");
-
-  button.type = "button";
-  button.className = "gallery-item";
-  button.dataset.category = category;
-  button.setAttribute(
-    "aria-label",
-    "Άνοιγμα φωτογραφίας"
-  );
-
-  const img = document.createElement("img");
-
-  img.src = src;
-  img.loading = "lazy";
-  img.decoding = "async";
-  img.alt = category === "real"
-    ? "Real Estate Photography - Minimal Studio"
-    : "Events Photography - Minimal Studio";
-
-  button.appendChild(img);
-
-  button.addEventListener("click", () => {
-    openLightbox(src);
-  });
-
-  return button;
+if (location.protocol === "https:" ||
+    location.protocol === "http:") {
+  useGalleryPhoto("real-estate/", "realCover", 0);
+  useGalleryPhoto("events/", "eventsCover", 0);
+  useGalleryPhoto("real-estate/", "businessCover", 2);
 }
-
-/* LOAD PORTFOLIO */
-
-async function initializePortfolio() {
-
-  const [realImages, eventImages] = await Promise.all([
-    loadImagesFromPage(config.realEstatePage),
-    loadImagesFromPage(config.eventsPage)
-  ]);
-
-  const realSelection = realImages.slice(
-    0, config.maxImagesPerCategory
-  );
-
-  const eventSelection = eventImages.slice(
-    0, config.maxImagesPerCategory
-  );
-
-  portfolioImages = [
-    ...realSelection.map(src => ({
-      src,
-      category: "real"
-    })),
-
-    ...eventSelection.map(src => ({
-      src,
-      category: "events"
-    }))
-  ];
-
-  /*
-    Εναλλάσσουμε εικόνες ακινήτων και events
-    για πιο ενδιαφέρον οπτικό αποτέλεσμα.
-  */
-
-  const arranged = [];
-
-  const maxLength = Math.max(
-    realSelection.length,
-    eventSelection.length
-  );
-
-  for (let i = 0; i < maxLength; i++) {
-
-    if (realSelection[i]) {
-      arranged.push({
-        src: realSelection[i],
-        category: "real"
-      });
-    }
-
-    if (eventSelection[i]) {
-      arranged.push({
-        src: eventSelection[i],
-        category: "events"
-      });
-    }
-
-  }
-
-  portfolioImages = arranged;
-
-  gallery.replaceChildren();
-
-  portfolioImages.forEach(item => {
-    gallery.appendChild(
-      createGalleryItem(item.src, item.category)
-    );
-  });
-
-  if (portfolioImages.length === 0) {
-    galleryStatus.textContent =
-      "Δες τις φωτογραφίες μας στις συλλογές Real Estate και Events.";
-  } else {
-    galleryStatus.textContent = "";
-  }
-
-  /*
-    Χρησιμοποιούμε πραγματικές φωτογραφίες
-    και στα service cards.
-  */
-
-  setServiceImage(
-    "service-real-img",
-    realImages[0]
-  );
-
-  setServiceImage(
-    "service-events-img",
-    eventImages[0]
-  );
-
-  setServiceImage(
-    "service-tour-img",
-    realImages[1] || realImages[0]
-  );
-
-  setServiceImage(
-    "service-commercial-img",
-    realImages[2] || eventImages[1]
-  );
-
-  updateVisibleImages();
-}
-
-function setServiceImage(id, src) {
-  const img = document.getElementById(id);
-
-  if (img && src) {
-    img.src = src;
-  } else if (img) {
-    img.style.display = "none";
-  }
-}
-
-/* FILTERS */
-
-const filterButtons = document.querySelectorAll(".filter");
-
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-
-    filterButtons.forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    const filter = button.dataset.filter;
-
-    document.querySelectorAll(".gallery-item")
-      .forEach(item => {
-        item.hidden =
-          filter !== "all" &&
-          item.dataset.category !== filter;
-      });
-
-    updateVisibleImages();
-  });
-});
-
-function updateVisibleImages() {
-  const filter =
-    document.querySelector(".filter.active")?.dataset.filter
-    || "all";
-
-  visibleImages = portfolioImages.filter(item => {
-    return filter === "all" || item.category === filter;
-  });
-}
-
-/* LIGHTBOX */
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightbox-img");
-
-function openLightbox(src) {
-  updateVisibleImages();
-
-  currentImageIndex = visibleImages.findIndex(
-    item => item.src === src
-  );
-
-  if (currentImageIndex < 0) return;
-
-  lightboxImage.src = src;
-
-  lightbox.classList.add("open");
-
-  document.body.style.overflow = "hidden";
-
-  document.getElementById("lightbox-close").focus();
-}
-
-function closeLightbox() {
-  lightbox.classList.remove("open");
-
-  document.body.style.overflow = "";
-
-  lightboxImage.removeAttribute("src");
-}
-
-function changeImage(direction) {
-  if (!visibleImages.length) return;
-
-  currentImageIndex =
-    (currentImageIndex + direction + visibleImages.length)
-    % visibleImages.length;
-
-  lightboxImage.src =
-    visibleImages[currentImageIndex].src;
-}
-
-document.getElementById("lightbox-close")
-  .addEventListener("click", closeLightbox);
-
-document.getElementById("lightbox-prev")
-  .addEventListener("click", () => changeImage(-1));
-
-document.getElementById("lightbox-next")
-  .addEventListener("click", () => changeImage(1));
-
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
-});
-
-document.addEventListener("keydown", event => {
-  if (!lightbox.classList.contains("open")) return;
-
-  if (event.key === "Escape") closeLightbox();
-
-  if (event.key === "ArrowRight") changeImage(1);
-
-  if (event.key === "ArrowLeft") changeImage(-1);
-});
 
 /* MOBILE MENU */
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+const menu = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
+menu.addEventListener("click", () => {
+  const opened = nav.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(opened));
 });
 
-navLinks.querySelectorAll("a").forEach(link => {
+nav.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+    nav.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
   });
 });
 
-/* FOOTER YEAR */
+/* EMAIL WITH SELECTED SERVICE */
+
+document.querySelectorAll(".quote").forEach(link => {
+  link.addEventListener("click", () => {
+    const service = link.dataset.service || "Photography";
+
+    document.getElementById("emailButton").href =
+      "mailto:lsminimalstudio@gmail.com?subject=" +
+      encodeURIComponent("Quote Request - " + service);
+  });
+});
+
+/* YEAR */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
-
-/* INITIALIZE */
-
-initializePortfolio();
 </script>
 
 </body>
