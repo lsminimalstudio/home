@@ -3,566 +3,1894 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="Minimal Studio — Real estate photography, business visuals, Google Street View photography and 360° virtual tours.">
+
+<meta name="description" content="Minimal Studio — Real Estate Photography, Events, Google Street View, 360° Photography and Virtual Tours.">
+
 <title>Minimal Studio | Photography & 360° Experiences</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ==========================
+   GLOBAL
+========================== */
+
 :root {
-  --black:#171717;
-  --grey:#777;
-  --light:#f7f7f5;
-  --border:#e8e8e6;
-  --white:#fff;
+  --black: #171717;
+  --grey: #777;
+  --light: #f7f7f5;
+  --border: #e8e8e6;
+  --white: #fff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:Inter,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.65}
-a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-img{max-width:100%;display:block}
-.container{max-width:1180px;margin:auto;padding:0 26px}
-section{padding:95px 0}
-.eyebrow{font-size:11px;letter-spacing:2.3px;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:14px}
-.heading{font-size:clamp(30px,4vw,45px);line-height:1.2;letter-spacing:-1.8px;font-weight:600}
-.subtitle{font-size:15px;color:var(--grey);max-width:640px;margin-top:15px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;background:#171717;color:#fff;border-radius:8px;font-size:13px;font-weight:600;transition:.25s}
-.btn:hover{background:#444}
-.btn-light{background:#fff;color:#171717}
-.btn-light:hover{background:#e7e7e7}
-.btn-outline{background:transparent;border:1px solid #aaa;color:#fff}
-.btn-outline:hover{background:#ffffff22}
-.section-header{margin-bottom:36px}
 
-/* NAV */
-
-.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#ffffffed;backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-inner{height:74px;max-width:1250px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:19px;letter-spacing:-.7px;font-weight:700}
-.nav-links{display:flex;align-items:center;gap:26px}
-.nav-links a{font-size:13px;color:#555}
-.nav-links a:hover{color:#000}
-.nav-links .nav-cta{background:#171717;color:white;padding:11px 16px;border-radius:8px}
-.menu-toggle{display:none;border:0;background:none;font-size:25px}
-
-/* HERO */
-
-.hero{height:min(810px,88svh);min-height:520px;margin-top:74px;padding:0;position:relative;background:#242424;display:grid;place-items:center;overflow:hidden}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#0004,#0008)}
-.hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:25px;max-width:950px}
-.hero-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:22px}
-.hero h1{font-size:clamp(49px,9vw,100px);font-weight:600;letter-spacing:-5px;line-height:1.05}
-.hero p{font-size:clamp(15px,2vw,19px);font-weight:300;max-width:670px;margin:23px auto 0;color:#ffffffe0}
-.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-
-/* INTRO */
-
-.intro{text-align:center;padding:90px 25px}
-.intro h2{font-size:clamp(27px,3.4vw,42px);max-width:800px;margin:auto;font-weight:500;letter-spacing:-1.4px;line-height:1.35}
-.intro .subtitle{margin:20px auto 0}
-
-/* SERVICES */
-
-.services{background:var(--light)}
-.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.service-card{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #0000000b}
-.service-cover{height:265px;background:#e8e8e5;overflow:hidden}
-.service-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.service-card:hover .service-cover img{transform:scale(1.04)}
-.service-body{padding:27px;flex:1;display:flex;flex-direction:column}
-.service-num{font-size:11px;color:#999;margin-bottom:11px}
-.service-body h3{font-size:21px;font-weight:600;letter-spacing:-.65px}
-.service-body p{font-size:14px;color:var(--grey);margin:12px 0 23px}
-.service-link{font-size:13px;font-weight:600;margin-top:auto}
-
-/* PRICING */
-
-.pricing{background:#fff}
-.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.price-card{padding:31px;border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column}
-.price-card.featured{background:var(--light)}
-.price-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.price-card h3{font-size:20px;letter-spacing:-.6px}
-.price-label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
-.price{font-size:34px;letter-spacing:-1.6px;line-height:1.1;font-weight:600;white-space:nowrap}
-.price small{font-size:12px;color:#888;letter-spacing:0;font-weight:400;display:block;margin-bottom:4px}
-.price-card .desc{font-size:14px;color:#777;margin-top:16px}
-.price-list{list-style:none;margin:22px 0 28px;display:grid;gap:11px}
-.price-list li{font-size:13px;display:flex;align-items:start;gap:9px}
-.price-list li::before{content:"✓";font-weight:600}
-.price-card .btn{margin-top:auto;text-align:center}
-.price-footnote{margin-top:26px;font-size:12px;color:#888;max-width:950px}
-
-/* 360 */
-
-.experiences{background:var(--light)}
-.experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.experience-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.experience-preview{aspect-ratio:16/10;background:#dededb;position:relative;overflow:hidden}
-.experience-preview img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.experience-preview:hover img{transform:scale(1.04)}
-.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:65px;height:65px;background:#fff;border-radius:50%;display:grid;place-items:center;font-size:23px;padding-left:4px;box-shadow:0 4px 20px #0003}
-.experience-body{padding:28px;display:flex;flex-direction:column;flex:1}
-.experience-body h3{font-size:22px;letter-spacing:-.7px}
-.experience-body p{color:#777;font-size:14px;margin:13px 0 23px}
-.experience-body .btn{align-self:flex-start;margin-top:auto}
-.experience-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#888;margin-bottom:10px}
-
-/* PROCESS */
-
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:43px}
-.process-step{border-top:1px solid #ddd;padding-top:23px}
-.step-number{color:#aaa;font-size:13px}
-.process-step h3{font-size:20px;margin:20px 0 10px}
-.process-step p{font-size:14px;color:#777}
-
-/* CONTACT */
-
-.contact{background:#171717;color:#fff;text-align:center;padding:105px 25px}
-.contact .eyebrow{color:#bbb}
-.contact h2{font-size:clamp(35px,5vw,58px);line-height:1.14;letter-spacing:-2px}
-.contact p{color:#aaa;max-width:550px;margin:23px auto 30px;font-size:15px}
-.contact-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.contact-email{display:block;color:#aaa;font-size:13px;margin-top:24px}
-footer{padding:28px;color:#888;font-size:12px}
-.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1180px;margin:auto}
-
-/* MOBILE */
-
-@media(max-width:800px){
- .nav-inner{height:68px}
- .menu-toggle{display:block}
- .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #eee;padding:15px 26px 24px;flex-direction:column;align-items:stretch;gap:0}
- .nav-links.open{display:flex}
- .nav-links a{padding:11px 0}
- .nav-links .nav-cta{text-align:center;margin-top:8px}
- .hero{margin-top:68px;height:76svh}
- section{padding:70px 0}
- .services-grid,.pricing-grid,.experience-grid{grid-template-columns:1fr}
- .process-grid{grid-template-columns:1fr;gap:25px}
- .service-cover{height:245px}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-@media(max-width:480px){
- .container{padding:0 18px}
- .hero h1{letter-spacing:-2px}
- .hero-label{letter-spacing:1.5px}
- .price-card{padding:24px}
- .price{font-size:29px}
- .service-cover{height:215px}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}
- *,*::before,*::after{transition:none!important;animation:none!important}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--black);
+  background: #fff;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 26px;
+}
+
+section {
+  padding: 95px 0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.heading {
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--grey);
+  max-width: 670px;
+  margin-top: 15px;
+}
+
+.section-header {
+  margin-bottom: 36px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  background: #171717;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background .25s;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+.btn-light {
+  background: #fff;
+  color: #171717;
+}
+
+.btn-light:hover {
+  background: #e7e7e7;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #aaa;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #ffffff22;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffffed;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  height: 74px;
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 19px;
+  letter-spacing: -.7px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: #555;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.nav-links .nav-cta {
+  background: #171717;
+  color: #fff;
+  padding: 11px 16px;
+  border-radius: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 25px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+  height: min(810px, 88svh);
+  min-height: 520px;
+  margin-top: 74px;
+  padding: 0;
+  position: relative;
+  background: #242424;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .8;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.55)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 25px;
+  max-width: 950px;
+}
+
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(49px, 9vw, 100px);
+  font-weight: 600;
+  letter-spacing: -5px;
+  line-height: 1.05;
+}
+
+.hero p {
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 300;
+  max-width: 670px;
+  margin: 23px auto 0;
+  color: #ffffffe0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+/* ==========================
+   INTRO
+========================== */
+
+.intro {
+  text-align: center;
+  padding: 90px 25px;
+}
+
+.intro h2 {
+  font-size: clamp(27px, 3.4vw, 42px);
+  max-width: 800px;
+  margin: auto;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+  line-height: 1.35;
+}
+
+.intro .subtitle {
+  margin: 20px auto 0;
+}
+
+/* ==========================
+   SERVICES - TWO CARDS
+========================== */
+
+.services {
+  background: var(--light);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #0000000b;
+}
+
+.service-cover {
+  height: 310px;
+  background: #e8e8e5;
+  overflow: hidden;
+}
+
+.service-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.service-card:hover .service-cover img {
+  transform: scale(1.04);
+}
+
+.service-body {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-num {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 11px;
+}
+
+.service-body h3 {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -.65px;
+}
+
+.service-body p {
+  font-size: 14px;
+  color: var(--grey);
+  margin: 12px 0 23px;
+}
+
+.service-link {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* ==========================
+   360 EXPERIENCES
+========================== */
+
+.experiences {
+  background: #fff;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.experience-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.07);
+}
+
+/* Enhanced YouTube thumbnail */
+
+.experience-preview {
+  display: block;
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: #252525;
+  isolation: isolate;
+}
+
+.experience-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.13);
+  transition: transform .65s, filter .4s;
+  filter: saturate(1.06) contrast(1.05);
+}
+
+/* Crop screenshot borders */
+.experience-card:hover .experience-preview img {
+  transform: scale(1.2);
+}
+
+.experience-preview::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.38) 0%,
+    rgba(0,0,0,.05) 36%,
+    rgba(0,0,0,.1) 55%,
+    rgba(0,0,0,.72) 100%
+  );
+}
+
+.preview-label {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  z-index: 2;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,.15);
+  backdrop-filter: blur(5px);
+}
+
+.preview-bottom {
+  position: absolute;
+  left: 24px;
+  bottom: 23px;
+  right: 24px;
+  color: #fff;
+  z-index: 2;
+}
+
+.preview-bottom strong {
+  display: block;
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -.9px;
+  font-weight: 600;
+}
+
+.preview-bottom span {
+  font-size: 12px;
+  color: #ffffffd9;
+}
+
+.preview-play {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.96);
+  color: #171717;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  padding-left: 4px;
+  box-shadow: 0 8px 35px rgba(0,0,0,.28);
+  transition: transform .3s;
+}
+
+.experience-card:hover .preview-play {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* Decorative 360 indicators */
+
+.preview-360 {
+  position: absolute;
+  top: 21px;
+  right: 23px;
+  z-index: 2;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  background: rgba(0,0,0,.28);
+  border-radius: 30px;
+  padding: 6px 12px;
+  backdrop-filter: blur(4px);
+}
+
+.experience-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.experience-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.experience-body h3 {
+  font-size: 23px;
+  letter-spacing: -.7px;
+}
+
+.experience-body p {
+  color: #777;
+  font-size: 14px;
+  margin: 13px 0 25px;
+}
+
+.experience-body .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ==========================
+   PRICING
+========================== */
+
+.pricing {
+  background: var(--light);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.price-card {
+  padding: 31px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.price-card.featured {
+  border-color: #d5d5d1;
+}
+
+.price-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.price-card h3 {
+  font-size: 20px;
+  letter-spacing: -.6px;
+}
+
+.price-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 34px;
+  letter-spacing: -1.6px;
+  line-height: 1.1;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price small {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.price.price-custom {
+  font-size: 20px;
+  letter-spacing: -.5px;
+  white-space: normal;
+  text-align: right;
+}
+
+.price-card .desc {
+  font-size: 14px;
+  color: #777;
+  margin-top: 16px;
+}
+
+.price-list {
+  list-style: none;
+  margin: 22px 0 28px;
+  display: grid;
+  gap: 11px;
+}
+
+.price-list li {
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.price-list li::before {
+  content: "✓";
+  font-weight: 600;
+}
+
+.price-card .btn {
+  margin-top: auto;
+  text-align: center;
+}
+
+.price-footnote {
+  margin-top: 26px;
+  font-size: 12px;
+  color: #888;
+  max-width: 950px;
+}
+
+/* ==========================
+   PROCESS
+========================== */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 43px;
+}
+
+.process-step {
+  border-top: 1px solid #ddd;
+  padding-top: 23px;
+}
+
+.step-number {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.process-step h3 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+
+.process-step p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact {
+  background: #171717;
+  color: #fff;
+  text-align: center;
+  padding: 105px 25px;
+}
+
+.contact .eyebrow {
+  color: #bbb;
+}
+
+.contact h2 {
+  font-size: clamp(35px, 5vw, 58px);
+  line-height: 1.14;
+  letter-spacing: -2px;
+}
+
+.contact p {
+  color: #aaa;
+  max-width: 550px;
+  margin: 23px auto 30px;
+  font-size: 15px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-email {
+  display: block;
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 24px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+  padding: 28px;
+  color: #888;
+  font-size: 12px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1180px;
+  margin: auto;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:800px) {
+
+  .nav-inner {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 26px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 11px 0;
+  }
+
+  .nav-links .nav-cta {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .hero {
+    margin-top: 68px;
+    height: 76svh;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .services-grid,
+  .experience-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .service-cover {
+    height: 270px;
+  }
+
+  .experience-preview {
+    height: 290px;
+  }
+}
+
+@media(max-width:480px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-label {
+    letter-spacing: 1.5px;
+  }
+
+  .service-cover {
+    height: 230px;
+  }
+
+  .experience-preview {
+    height: 240px;
+  }
+
+  .preview-bottom strong {
+    font-size: 21px;
+  }
+
+  .preview-play {
+    width: 58px;
+    height: 58px;
+    font-size: 22px;
+  }
+
+  .price-card {
+    padding: 24px;
+  }
+
+  .price {
+    font-size: 29px;
+  }
+
+  .price-card h3 {
+    font-size: 18px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- ==========================
+     NAVIGATION
+========================== -->
+
 <header class="nav">
- <nav class="nav-inner" aria-label="Main navigation">
-  <a class="logo" href="#home">Minimal Studio.</a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+<nav class="nav-inner" aria-label="Main navigation">
+
+  <a class="logo" href="#home">
+    Minimal Studio.
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Menu"
+    aria-expanded="false"
+    aria-controls="navLinks">
+    ☰
+  </button>
+
   <div class="nav-links" id="navLinks">
-   <a href="#services">Services</a>
-   <a href="#pricing">Pricing</a>
-   <a href="#experiences">360° Experiences</a>
-   <a href="#about">About</a>
-   <a href="#contact" class="nav-cta">Get in Touch</a>
+
+    <a href="#services">Services</a>
+
+    <a href="#experiences">360° Experiences</a>
+
+    <a href="#pricing">Pricing</a>
+
+    <a href="#about">About</a>
+
+    <a href="#contact" class="nav-cta">
+      Get in Touch
+    </a>
+
   </div>
- </nav>
+
+</nav>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- ==========================
+     HERO
+========================== -->
 
 <section class="hero" id="home">
- <video autoplay muted loop playsinline preload="metadata">
-  <source src="villa.mp4" type="video/mp4">
- </video>
- <div class="hero-overlay"></div>
- <div class="hero-content">
-  <div class="hero-label">Photography · Spaces · Visual Stories</div>
-  <h1>Minimal Studio.</h1>
-  <p>Capturing spaces, details and moments through photography and immersive visual experiences.</p>
-  <div class="hero-actions">
-   <a class="btn btn-light" href="#services">Explore Services</a>
-   <a class="btn btn-outline" href="#contact">Let's Work Together</a>
+
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="villa.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      Photography · Spaces · Visual Stories
+    </div>
+
+    <h1>Minimal Studio.</h1>
+
+    <p>
+      Capturing spaces, details and moments
+      through photography and immersive
+      visual experiences.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-light" href="#services">
+        Explore Services
+      </a>
+
+      <a class="btn btn-outline" href="#contact">
+        Let's Work Together
+      </a>
+
+    </div>
+
   </div>
- </div>
+
 </section>
 
-<!-- INTRO -->
+<!-- ==========================
+     INTRO
+========================== -->
 
 <div class="intro container" id="about">
- <p class="eyebrow">The Studio</p>
- <h2>Every space has a story.<br>We make it visible.</h2>
- <p class="subtitle">Real estate photography, visual storytelling and immersive 360° experiences. Thoughtfully created to showcase spaces, businesses and moments at their best.</p>
+
+  <p class="eyebrow">The Studio</p>
+
+  <h2>
+    Every space has a story.<br>
+    We make it visible.
+  </h2>
+
+  <p class="subtitle">
+    Real estate photography, visual storytelling
+    and immersive 360° experiences.
+    Thoughtfully created to showcase spaces,
+    businesses and moments at their best.
+  </p>
+
 </div>
 
-<!-- SERVICES -->
+<!-- ==========================
+     SERVICES
+     ONLY TWO CARDS
+========================== -->
 
 <section class="services" id="services">
- <div class="container">
+
+<div class="container">
+
   <div class="section-header">
-   <p class="eyebrow">What We Do</p>
-   <h2 class="heading">Our Services</h2>
-   <p class="subtitle">Visual content designed to highlight the character and value of every space.</p>
+
+    <p class="eyebrow">What We Do</p>
+
+    <h2 class="heading">Our Services</h2>
+
+    <p class="subtitle">
+      Photography that captures the unique
+      character of spaces, details and moments.
+    </p>
+
   </div>
 
   <div class="services-grid">
 
-   <a href="real-estate/" class="service-card">
-    <div class="service-cover">
-     <img id="realCover" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&q=80" alt="Real Estate Photography" loading="lazy">
-    </div>
-    <div class="service-body">
-     <div class="service-num">01 / Photography</div>
-     <h3>Real Estate Photography</h3>
-     <p>Professional photography for properties, Airbnb, hotels and architectural spaces.</p>
-     <div class="service-link">Explore Projects →</div>
-    </div>
-   </a>
+    <!-- REAL ESTATE -->
 
-   <a href="events/" class="service-card">
-    <div class="service-cover">
-     <img id="eventsCover" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80" alt="Events Photography" loading="lazy">
-    </div>
-    <div class="service-body">
-     <div class="service-num">02 / Visual Stories</div>
-     <h3>Events & Aesthetics</h3>
-     <p>Capturing memorable moments, meaningful details and the atmosphere of special occasions.</p>
-     <div class="service-link">Explore Projects →</div>
-    </div>
-   </a>
+    <a href="real-estate/" class="service-card">
 
-   <a href="#experiences" class="service-card">
-    <div class="service-cover">
-     <img src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg" alt="360 Virtual Tours" loading="lazy">
-    </div>
-    <div class="service-body">
-     <div class="service-num">03 / Immersive Experiences</div>
-     <h3>360° Virtual Tours</h3>
-     <p>Immersive presentations and walkthrough experiences for properties and businesses.</p>
-     <div class="service-link">Explore 360° Tours →</div>
-    </div>
-   </a>
+      <div class="service-cover">
 
-   <a href="#pricing" class="service-card">
-    <div class="service-cover">
-     <img id="businessCover" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=80" alt="Business Photography" loading="lazy">
-    </div>
-    <div class="service-body">
-     <div class="service-num">04 / Business Visuals</div>
-     <h3>Business & Website Content</h3>
-     <p>Professional imagery for websites, businesses, Google Business Profiles and social media.</p>
-     <div class="service-link">Explore Pricing →</div>
-    </div>
-   </a>
+        <img
+          id="realCover"
+          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&q=80"
+          alt="Real Estate Photography"
+          loading="lazy">
+
+      </div>
+
+      <div class="service-body">
+
+        <div class="service-num">
+          01 / Photography
+        </div>
+
+        <h3>Real Estate Photography</h3>
+
+        <p>
+          Professional photography for properties,
+          Airbnb, hotels and architectural spaces.
+          Bringing out the best in every interior.
+        </p>
+
+        <div class="service-link">
+          Explore Projects →
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- EVENTS -->
+
+    <a href="events/" class="service-card">
+
+      <div class="service-cover">
+
+        <img
+          id="eventsCover"
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80"
+          alt="Events and Aesthetics Photography"
+          loading="lazy">
+
+      </div>
+
+      <div class="service-body">
+
+        <div class="service-num">
+          02 / Visual Stories
+        </div>
+
+        <h3>Events & Aesthetics</h3>
+
+        <p>
+          Capturing memorable moments,
+          meaningful details and the atmosphere
+          of special occasions.
+        </p>
+
+        <div class="service-link">
+          Explore Projects →
+        </div>
+
+      </div>
+
+    </a>
 
   </div>
- </div>
+
+</div>
+
 </section>
 
-<!-- PRICING -->
-
-<section class="pricing" id="pricing">
- <div class="container">
-  <div class="section-header">
-   <p class="eyebrow">Simple & Transparent</p>
-   <h2 class="heading">Our Pricing</h2>
-   <p class="subtitle">Flexible photography and 360° packages tailored to your space. Every project is different — these are starting prices.</p>
-  </div>
-
-  <div class="pricing-grid">
-
-   <article class="price-card">
-    <div class="price-label">01 / Real Estate</div>
-    <div class="price-top">
-     <h3>Property Photography</h3>
-     <div class="price"><small>From</small>90€</div>
-    </div>
-    <p class="desc">For Airbnb, property listings and professional spaces.</p>
-    <ul class="price-list">
-     <li>Up to 10 edited photographs</li>
-     <li>Professional color and exposure correction</li>
-     <li>Web-ready high-quality files</li>
-     <li>Online delivery</li>
-    </ul>
-    <a class="btn quote" data-service="Property Photography" href="#contact">Request a Quote →</a>
-   </article>
-
-   <article class="price-card">
-    <div class="price-label">02 / Business Photography</div>
-    <div class="price-top">
-     <h3>Website & Business Photos</h3>
-     <div class="price"><small>From</small>90€</div>
-    </div>
-    <p class="desc">Photography for websites, shops, cafes and business profiles.</p>
-    <ul class="price-list">
-     <li>Up to 10 edited photographs</li>
-     <li>Interior, exterior and selected details</li>
-     <li>Files optimized for web and social media</li>
-     <li>Online delivery</li>
-    </ul>
-    <a class="btn quote" data-service="Website & Business Photos" href="#contact">Request a Quote →</a>
-   </article>
-
-   <article class="price-card featured">
-    <div class="price-label">03 / Google Maps</div>
-    <div class="price-top">
-     <h3>Street View & 360° Photos</h3>
-     <div class="price"><small>From</small>35€</div>
-    </div>
-    <p class="desc">Standalone 360° panoramic photography without a complete virtual walkthrough.</p>
-    <ul class="price-list">
-     <li>1 panoramic 360° photo from 35€</li>
-     <li>3 panoramic 360° photos from 79€</li>
-     <li>Panorama editing and export</li>
-     <li>Google Maps publication by agreement, subject to platform support and approval</li>
-    </ul>
-    <a class="btn quote" data-service="Street View & 360° Photos" href="#contact">Request a Quote →</a>
-   </article>
-
-   <article class="price-card featured">
-    <div class="price-label">04 / 360° Experiences</div>
-    <div class="price-top">
-     <h3>Interactive Virtual Tour</h3>
-     <div class="price"><small>From</small>150€</div>
-    </div>
-    <p class="desc">Multi-point interactive panoramic tours for websites and properties.</p>
-    <ul class="price-list">
-     <li>Up to 5 panoramic 360° positions</li>
-     <li>Interactive navigation between spaces</li>
-     <li>Website embedding code or shareable link</li>
-     <li>Hosting and subscriptions quoted separately</li>
-    </ul>
-    <a class="btn quote" data-service="Interactive Virtual Tour" href="#contact">Request a Quote →</a>
-   </article>
-
-  </div>
-
-  <p class="price-footnote">Indicative starting prices for small, local projects. Final pricing depends on the size of the space, travel, editing and deliverables. Hosting fees, applicable VAT and additional requests are quoted separately. Walkthrough video production is priced individually.</p>
- </div>
-</section>
-
-<!-- 360 EXPERIENCES -->
+<!-- ==========================
+     DISCOVER SPACES IN 360
+     TWO SIDE BY SIDE CARDS
+========================== -->
 
 <section class="experiences" id="experiences">
- <div class="container">
+
+<div class="container">
 
   <div class="section-header">
-   <p class="eyebrow">Explore Beyond the Frame</p>
-   <h2 class="heading">Discover Spaces in 360°</h2>
-   <p class="subtitle">From a single panoramic photo to a complete immersive experience. Explore two different ways to showcase a space.</p>
+
+    <p class="eyebrow">
+      Explore Beyond the Frame
+    </p>
+
+    <h2 class="heading">
+      Discover Spaces in 360°
+    </h2>
+
+    <p class="subtitle">
+      From a single panoramic photo to a
+      complete immersive experience.
+      Explore two different ways to showcase a space.
+    </p>
+
   </div>
 
   <div class="experience-grid">
 
-   <!-- WALKTHROUGH -->
+    <!-- VIRTUAL TOURS -->
 
-   <article class="experience-card">
-    <a class="experience-preview"
-       href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
-       target="_blank" rel="noopener noreferrer">
-     <img src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg"
-          alt="Minimal Studio virtual walkthrough example"
-          loading="lazy">
-     <span class="play">▶</span>
-    </a>
-    <div class="experience-body">
-     <div class="experience-label">01 / Full Experience</div>
-     <h3>Virtual Tours & Walkthroughs</h3>
-     <p>Explore a complete property through immersive video walkthroughs and 360° experiences. Ideal for real estate, hospitality and property presentations.</p>
-     <a class="btn"
+    <article class="experience-card">
+
+      <a
+        class="experience-preview"
         href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
-        target="_blank" rel="noopener noreferrer">
-        Watch Walkthrough →
-     </a>
-    </div>
-   </article>
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Watch Virtual Tour Example">
 
-   <!-- GOOGLE STREET VIEW -->
-
-   <article class="experience-card">
-    <a class="experience-preview"
-       href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
-       target="_blank" rel="noopener noreferrer">
-     <img src="https://img.youtube.com/vi/Ro7iMbsFraQ/hqdefault.jpg"
-          alt="Minimal Studio Google Street View example"
+        <img
+          src="https://img.youtube.com/vi/dFSK0JQO-fg/hqdefault.jpg"
+          alt="360 Virtual Tours and Walkthroughs by Minimal Studio"
           loading="lazy">
-     <span class="play">▶</span>
-    </a>
-    <div class="experience-body">
-     <div class="experience-label">02 / Standalone Panoramas</div>
-     <h3>Street View & 360° Photos</h3>
-     <p>Showcase your business with one or more standalone panoramic photographs. An ideal option for shops, restaurants, Airbnb and Google Maps — without needing a full walkthrough.</p>
-     <a class="btn"
+
+        <span class="preview-label">
+          Immersive Property Experience
+        </span>
+
+        <span class="preview-360">
+          360°
+        </span>
+
+        <span class="preview-play">
+          ▶
+        </span>
+
+        <span class="preview-bottom">
+
+          <strong>
+            Step Inside.
+          </strong>
+
+          <span>
+            Explore every corner of a space
+          </span>
+
+        </span>
+
+      </a>
+
+      <div class="experience-body">
+
+        <div class="experience-label">
+          01 / Immersive Experiences
+        </div>
+
+        <h3>
+          Virtual Tours & Walkthroughs
+        </h3>
+
+        <p>
+          Experience a property beyond traditional
+          photography. Explore immersive 360°
+          environments and video walkthroughs
+          designed for real estate, hospitality
+          and business presentations.
+        </p>
+
+        <a
+          class="btn"
+          href="https://www.youtube.com/watch?v=dFSK0JQO-fg&list=PLaJ49ZrB_LEQ"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Watch Walkthrough →
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- STREET VIEW -->
+
+    <article class="experience-card">
+
+      <a
+        class="experience-preview"
         href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
-        target="_blank" rel="noopener noreferrer">
-        Watch Street View Example →
-     </a>
-    </div>
-   </article>
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Watch Google Street View Example">
+
+        <img
+          src="https://img.youtube.com/vi/Ro7iMbsFraQ/hqdefault.jpg"
+          alt="Google Street View and 360 Photography Example"
+          loading="lazy">
+
+        <span class="preview-label">
+          Google Maps & Panoramas
+        </span>
+
+        <span class="preview-360">
+          360°
+        </span>
+
+        <span class="preview-play">
+          ▶
+        </span>
+
+        <span class="preview-bottom">
+
+          <strong>
+            Look Around.
+          </strong>
+
+          <span>
+            One photo. Every direction.
+          </span>
+
+        </span>
+
+      </a>
+
+      <div class="experience-body">
+
+        <div class="experience-label">
+          02 / Panoramic Photography
+        </div>
+
+        <h3>
+          Street View & 360° Photos
+        </h3>
+
+        <p>
+          Showcase your business or property with
+          one or more panoramic 360° photographs.
+
+          An ideal solution for shops,
+          restaurants, hotels, Airbnb
+          and Google Maps — without
+          requiring a complete virtual tour.
+        </p>
+
+        <a
+          class="btn"
+          href="https://www.youtube.com/watch?v=Ro7iMbsFraQ&list=PLaJ49ZrB_LEQ&index=6"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Watch Street View Example →
+
+        </a>
+
+      </div>
+
+    </article>
 
   </div>
- </div>
+
+</div>
+
 </section>
 
-<!-- PROCESS -->
+<!-- ==========================
+     PRICING
+========================== -->
 
-<section>
- <div class="container">
-  <p class="eyebrow">Our Approach</p>
-  <h2 class="heading">Simple. Thoughtful. Effective.</h2>
+<section class="pricing" id="pricing">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <p class="eyebrow">
+      Simple & Transparent
+    </p>
+
+    <h2 class="heading">
+      Our Pricing
+    </h2>
+
+    <p class="subtitle">
+      Flexible photography and 360° packages
+      tailored to your space.
+
+      Every project is different —
+      these are our starting prices.
+    </p>
+
+  </div>
+
+  <div class="pricing-grid">
+
+    <!-- PROPERTY PHOTOGRAPHY -->
+
+    <article class="price-card">
+
+      <div class="price-label">
+        01 / Real Estate
+      </div>
+
+      <div class="price-top">
+
+        <h3>Property Photography</h3>
+
+        <div class="price">
+          <small>From</small>
+          90€
+        </div>
+
+      </div>
+
+      <p class="desc">
+        Ideal for Airbnb, property listings,
+        apartments and professional spaces.
+      </p>
+
+      <ul class="price-list">
+
+        <li>
+          Up to 10 edited photographs
+        </li>
+
+        <li>
+          Professional color and exposure correction
+        </li>
+
+        <li>
+          Web-ready high-quality files
+        </li>
+
+        <li>
+          Online delivery
+        </li>
+
+      </ul>
+
+      <a
+        class="btn quote"
+        data-service="Property Photography"
+        href="#contact">
+
+        Request a Quote →
+
+      </a>
+
+    </article>
+
+    <!-- EVENTS -->
+
+    <article class="price-card">
+
+      <div class="price-label">
+        02 / Events & Aesthetics
+      </div>
+
+      <div class="price-top">
+
+        <h3>Event Photography</h3>
+
+        <div class="price price-custom">
+          <small>Pricing</small>
+          On Request
+        </div>
+
+      </div>
+
+      <p class="desc">
+        Photography for events, celebrations
+        and meaningful moments.
+      </p>
+
+      <ul class="price-list">
+
+        <li>
+          Event details and atmosphere
+        </li>
+
+        <li>
+          Natural moments and visual storytelling
+        </li>
+
+        <li>
+          Professionally edited photographs
+        </li>
+
+        <li>
+          Tailored coverage and online delivery
+        </li>
+
+      </ul>
+
+      <a
+        class="btn quote"
+        data-service="Event Photography"
+        href="#contact">
+
+        Request a Quote →
+
+      </a>
+
+    </article>
+
+    <!-- STREET VIEW -->
+
+    <article class="price-card featured">
+
+      <div class="price-label">
+        03 / Google Maps & Panoramas
+      </div>
+
+      <div class="price-top">
+
+        <h3>
+          Street View & 360° Photos
+        </h3>
+
+        <div class="price">
+          <small>From</small>
+          35€
+        </div>
+
+      </div>
+
+      <p class="desc">
+        Standalone 360° panoramic photography
+        without a complete walkthrough.
+      </p>
+
+      <ul class="price-list">
+
+        <li>
+          1 panoramic 360° photo from 35€
+        </li>
+
+        <li>
+          3 panoramic 360° photos from 79€
+        </li>
+
+        <li>
+          Panorama editing and export
+        </li>
+
+        <li>
+          Google Maps publication by agreement,
+          subject to platform support and approval
+        </li>
+
+      </ul>
+
+      <a
+        class="btn quote"
+        data-service="Street View & 360 Photos"
+        href="#contact">
+
+        Request a Quote →
+
+      </a>
+
+    </article>
+
+    <!-- VIRTUAL TOURS -->
+
+    <article class="price-card featured">
+
+      <div class="price-label">
+        04 / Immersive Experiences
+      </div>
+
+      <div class="price-top">
+
+        <h3>
+          Interactive Virtual Tour
+        </h3>
+
+        <div class="price">
+          <small>From</small>
+          150€
+        </div>
+
+      </div>
+
+      <p class="desc">
+        An interactive multi-point 360° experience
+        for properties, websites and businesses.
+      </p>
+
+      <ul class="price-list">
+
+        <li>
+          Up to 5 panoramic 360° positions
+        </li>
+
+        <li>
+          Interactive navigation between spaces
+        </li>
+
+        <li>
+          Website embedding code or shareable link
+        </li>
+
+        <li>
+          Hosting and subscriptions quoted separately
+        </li>
+
+      </ul>
+
+      <a
+        class="btn quote"
+        data-service="Interactive Virtual Tour"
+        href="#contact">
+
+        Request a Quote →
+
+      </a>
+
+    </article>
+
+  </div>
+
+  <p class="price-footnote">
+    Indicative starting prices for small, local projects.
+    Final pricing depends on the size of the space,
+    travel, editing and requested deliverables.
+    Hosting, applicable VAT and additional services
+    are quoted separately.
+    Walkthrough video production is priced individually.
+  </p>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     OUR APPROACH
+========================== -->
+
+<section id="process">
+
+<div class="container">
+
+  <p class="eyebrow">
+    Our Approach
+  </p>
+
+  <h2 class="heading">
+    Simple. Thoughtful. Effective.
+  </h2>
 
   <div class="process-grid">
-   <div class="process-step">
-    <p class="step-number">01</p>
-    <h3>Let's Talk</h3>
-    <p>Tell us about your space, property or business and what you need to showcase.</p>
-   </div>
-   <div class="process-step">
-    <p class="step-number">02</p>
-    <h3>We Create</h3>
-    <p>Photography and visual experiences tailored to your project.</p>
-   </div>
-   <div class="process-step">
-    <p class="step-number">03</p>
-    <h3>You Showcase</h3>
-    <p>Receive your finished material ready for your website, listings or digital channels.</p>
-   </div>
+
+    <div class="process-step">
+
+      <p class="step-number">01</p>
+
+      <h3>Let's Talk</h3>
+
+      <p>
+        Tell us about your space, property
+        or business and what you need to showcase.
+      </p>
+
+    </div>
+
+    <div class="process-step">
+
+      <p class="step-number">02</p>
+
+      <h3>We Create</h3>
+
+      <p>
+        Photography and visual experiences
+        carefully tailored to your project.
+      </p>
+
+    </div>
+
+    <div class="process-step">
+
+      <p class="step-number">03</p>
+
+      <h3>You Showcase</h3>
+
+      <p>
+        Receive your finished material,
+        ready for your website,
+        property listings or digital channels.
+      </p>
+
+    </div>
+
   </div>
- </div>
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
+<!-- ==========================
+     CONTACT
+========================== -->
 
 <section class="contact" id="contact">
- <div class="container">
-  <p class="eyebrow">Start a Project</p>
-  <h2>Let's Create<br>Something Beautiful.</h2>
-  <p>Have a property, business or upcoming project? Get in touch and let's discuss how we can bring your vision to life.</p>
+
+<div class="container">
+
+  <p class="eyebrow">
+    Start a Project
+  </p>
+
+  <h2>
+    Let's Create<br>
+    Something Beautiful.
+  </h2>
+
+  <p>
+    Have a property, business or upcoming project?
+    Get in touch and let's discuss how
+    we can bring your vision to life.
+  </p>
+
   <div class="contact-actions">
-   <a class="btn btn-light" id="emailButton"
+
+    <a
+      class="btn btn-light"
+      id="emailButton"
       href="mailto:lsminimalstudio@gmail.com?subject=Project%20Inquiry">
+
       Request a Quote →
-   </a>
-   <a class="btn btn-outline"
+
+    </a>
+
+    <a
+      class="btn btn-outline"
       href="https://instagram.com/minimals__"
-      target="_blank" rel="noopener noreferrer">
+      target="_blank"
+      rel="noopener noreferrer">
+
       Instagram
-   </a>
+
+    </a>
+
   </div>
-  <a class="contact-email" href="mailto:lsminimalstudio@gmail.com">
-   lsminimalstudio@gmail.com
+
+  <a
+    class="contact-email"
+    href="mailto:lsminimalstudio@gmail.com">
+
+    lsminimalstudio@gmail.com
+
   </a>
- </div>
+
+</div>
+
 </section>
 
 </main>
 
+<!-- ==========================
+     FOOTER
+========================== -->
+
 <footer>
- <div class="footer-inner">
-  <span>© <span id="year"></span> Minimal Studio.</span>
-  <span>Photography · Spaces · 360° Experiences</span>
-  <a href="https://instagram.com/minimals__" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
- </div>
+
+<div class="footer-inner">
+
+  <span>
+    © <span id="year"></span> Minimal Studio.
+  </span>
+
+  <span>
+    Photography · Spaces · 360° Experiences
+  </span>
+
+  <a
+    href="https://instagram.com/minimals__"
+    target="_blank"
+    rel="noopener noreferrer">
+    Instagram ↗
+  </a>
+
+</div>
+
 </footer>
 
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
 <script>
+
 /*
-  THUMBNAILS
+  PHOTO THUMBNAILS
 
-  Οι κάρτες έχουν ήδη ενδεικτικές εικόνες.
-  Μόλις η σελίδα φιλοξενείται στο ίδιο GitHub Pages
-  site με τα galleries, αναζητούμε τις πραγματικές
-  φωτογραφίες στα υπάρχοντα HTML αρχεία.
+  Διατηρούμε αρχικά τις δύο εικόνες που ήδη
+  εμφανίζονται στα Real Estate / Events.
 
-  Οι αρχικοί σύνδεσμοι εικόνων παραμένουν fallback.
+  Αν βρεθούν φωτογραφίες στις υπάρχουσες
+  HTML συλλογές, χρησιμοποιούμε εκείνες.
+
+  Δεν δημιουργούμε νέα galleries.
 */
 
-async function useGalleryPhoto(page, imageId, imageIndex=0) {
+async function useGalleryPhoto(page, imageId, imageIndex = 0) {
+
   try {
+
     const url = new URL(page, location.href);
+
     const response = await fetch(url.href);
 
     if (!response.ok) return;
 
     const html = await response.text();
-    const doc = new DOMParser().parseFromString(html, "text/html");
 
-    let imgs = [...doc.querySelectorAll(
-      ".gallery img, .portfolio img"
-    )];
+    const doc = new DOMParser().parseFromString(
+      html,
+      "text/html"
+    );
+
+    let imgs = [
+      ...doc.querySelectorAll(
+        ".gallery img, .portfolio img"
+      )
+    ];
 
     if (!imgs.length) {
-      imgs = [...doc.querySelectorAll("main img, section img")];
+
+      imgs = [
+        ...doc.querySelectorAll(
+          "main img, section img"
+        )
+      ];
+
     }
 
-    const sources = imgs.map(img =>
-      img.getAttribute("data-src") ||
-      img.getAttribute("src")
-    ).filter(Boolean);
+    const sources = imgs.map(img => {
+
+      return img.getAttribute("data-src") ||
+             img.getAttribute("src");
+
+    }).filter(Boolean);
 
     if (!sources.length) return;
 
-    const chosen = sources[imageIndex] || sources[0];
-    const fullURL = new URL(chosen, url.href).href;
+    const selected = sources[imageIndex] || sources[0];
+
+    const finalURL = new URL(selected, url.href).href;
 
     const target = document.getElementById(imageId);
 
-    if (target) target.src = fullURL;
-  } catch(error) {
-    console.warn("Gallery thumbnail unavailable:", page, error);
+    if (!target) return;
+
+    /*
+      Κρατάμε την υπάρχουσα φωτογραφία
+      αν η νέα δεν μπορεί να φορτωθεί.
+    */
+
+    const testImage = new Image();
+
+    testImage.onload = () => {
+      target.src = finalURL;
+    };
+
+    testImage.src = finalURL;
+
+  } catch (error) {
+
+    console.warn(
+      "Could not load photo from:",
+      page,
+      error
+    );
+
   }
+
 }
 
-if (location.protocol === "https:" ||
-    location.protocol === "http:") {
-  useGalleryPhoto("real-estate/", "realCover", 0);
-  useGalleryPhoto("events/", "eventsCover", 0);
-  useGalleryPhoto("real-estate/", "businessCover", 2);
+/* Load existing gallery photos */
+
+if (
+  location.protocol === "https:" ||
+  location.protocol === "http:"
+) {
+
+  useGalleryPhoto(
+    "real-estate/",
+    "realCover",
+    0
+  );
+
+  useGalleryPhoto(
+    "events/",
+    "eventsCover",
+    0
+  );
+
 }
 
-/* MOBILE MENU */
+/* ==========================
+   MOBILE MENU
+========================== */
 
 const menu = document.getElementById("menuToggle");
+
 const nav = document.getElementById("navLinks");
 
 menu.addEventListener("click", () => {
+
   const opened = nav.classList.toggle("open");
-  menu.setAttribute("aria-expanded", String(opened));
+
+  menu.setAttribute(
+    "aria-expanded",
+    String(opened)
+  );
+
 });
 
 nav.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     nav.classList.remove("open");
-    menu.setAttribute("aria-expanded", "false");
+
+    menu.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
   });
+
 });
 
-/* EMAIL WITH SELECTED SERVICE */
+/* ==========================
+   SERVICE QUOTE EMAIL
+========================== */
+
+const emailButton = document.getElementById("emailButton");
+
+const defaultEmailHref = emailButton.href;
 
 document.querySelectorAll(".quote").forEach(link => {
-  link.addEventListener("click", () => {
-    const service = link.dataset.service || "Photography";
 
-    document.getElementById("emailButton").href =
+  link.addEventListener("click", () => {
+
+    const service =
+      link.dataset.service || "Photography";
+
+    emailButton.href =
       "mailto:lsminimalstudio@gmail.com?subject=" +
-      encodeURIComponent("Quote Request - " + service);
+      encodeURIComponent(
+        "Quote Request - " + service
+      );
+
   });
+
 });
 
-/* YEAR */
+/*
+  Reset the contact button when visitors use
+  the normal contact navigation.
+*/
+
+document.querySelectorAll(
+  '.nav-cta, a[href="#contact"]:not(.quote)'
+).forEach(link => {
+
+  link.addEventListener("click", () => {
+    emailButton.href = defaultEmailHref;
+  });
+
+});
+
+/* ==========================
+   FOOTER YEAR
+========================== */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
 </script>
 
 </body>
